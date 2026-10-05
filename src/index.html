@@ -221,7 +221,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
     <h1>Atividades prontas para imprimir. <span>Mais tempo com a criança.</span></h1>
     <p class="sub">Kits de atividades para crianças com autismo — atenção, emoções, sensorial e planos de aula. Baixe, imprima e use hoje.</p>
     <a class="btn" href="#oferta">Quero ver os kits</a>
-    <p class="preco-hero">Kits a partir de <strong>R$ 7</strong> · Kit completo por <strong>R$ 27,90</strong></p>
+    <p class="preco-hero">Kits a partir de <strong>R$ 7</strong> · Kit completo por <strong>R$ 27,90</strong><br>⚡ Acesso imediato · 🛡️ Garantia de 7 dias</p>
     <img class="mockup" src="img/hero.webp" alt="Folhas de atividades do Mundo Autista" width="940" height="625">
   </div>
 </section>
@@ -230,7 +230,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
 <section class="suave">
   <div class="container dor">
     <div class="video vertical">
-      <video src="video/dor.mp4" poster="img/poster-dor.webp" muted loop playsinline autoplay preload="metadata"></video>
+      <video data-video="dor" poster="img/poster-dor.webp" muted loop playsinline preload="metadata"></video>
       <button class="som" type="button">🔇 Ativar som</button>
     </div>
     <div>
@@ -269,15 +269,30 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
   </div>
 </section>
 
-<!-- 4. OFERTA -->
-<section class="suave" id="oferta">
+<!-- 4. PROVA SOCIAL (antes do preço: quebra o medo de golpe) -->
+<section class="suave">
+  <div class="container">
+    <h2 class="titulo">Quem já é nosso cliente, confia</h2>
+    <p class="sub">Conversas reais, publicadas com autorização, de clientes dos nossos materiais.</p>
+    <div class="depoimentos">
+      <img src="img/depoimento-1.webp" alt="Cliente elogiando os bônus, o conteúdo e a estrutura">
+      <img src="img/depoimento-3.webp" alt="Cliente que indicou para uma colega">
+      <img src="img/depoimento-2.webp" alt="Cliente acessando a área de membros e elogiando o atendimento">
+      <img src="img/depoimento-5.webp" alt="Cliente que já acompanha e comprou outro material">
+      <img src="img/depoimento-4.webp" alt="Cliente agradecendo um material extra">
+    </div>
+  </div>
+</section>
+
+<!-- 5. OFERTA -->
+<section id="oferta">
   <div class="container">
     <h2 class="titulo">Escolha seu kit</h2>
     <p class="sub">Pagamento único. Acesso imediato no seu e-mail.</p>
 
     <div class="oferta">
       <div class="video quadrado">
-        <video src="video/kits.mp4" poster="img/poster-kits.webp" muted loop playsinline autoplay preload="metadata"></video>
+        <video data-video="kits" poster="img/poster-kits.webp" muted loop playsinline preload="metadata"></video>
         <button class="som" type="button">🔇 Ativar som</button>
       </div>
 
@@ -315,8 +330,8 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
   </div>
 </section>
 
-<!-- 5. BÔNUS -->
-<section>
+<!-- 6. BÔNUS -->
+<section class="suave">
   <div class="container">
     <h2 class="titulo">No Kit Completo você ainda leva <mark>6 bônus</mark></h2>
     <p class="sub">Materiais extras para organizar a rotina e celebrar cada conquista.</p>
@@ -335,26 +350,12 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
   </div>
 </section>
 
-<!-- 6. PROVA SOCIAL -->
-<section class="suave">
-  <div class="container">
-    <h2 class="titulo">Quem já é nosso cliente, confia</h2>
-    <p class="sub">Conversas reais, publicadas com autorização, de clientes dos nossos materiais.</p>
-    <div class="depoimentos">
-      <img src="img/depoimento-1.webp" alt="Cliente elogiando os bônus, o conteúdo e a estrutura">
-      <img src="img/depoimento-3.webp" alt="Cliente que indicou para uma colega">
-      <img src="img/depoimento-2.webp" alt="Cliente acessando a área de membros e elogiando o atendimento">
-      <img src="img/depoimento-5.webp" alt="Cliente que já acompanha e comprou outro material">
-      <img src="img/depoimento-4.webp" alt="Cliente agradecendo um material extra">
-    </div>
-  </div>
-</section>
-
 <!-- 7. FAQ -->
 <section>
   <div class="container">
     <h2 class="titulo">Perguntas frequentes</h2>
     <div class="faq">
+      <details><summary>Vou receber algo pelo correio?</summary><p>Não. O material é digital (PDF): você baixa e imprime em casa ou numa papelaria, quantas vezes quiser.</p></details>
       <details><summary>Como recebo o material?</summary><p>Logo após o pagamento, o acesso chega no seu e-mail. Em minutos você já pode baixar e imprimir.</p></details>
       <details><summary>É assinatura? Vou pagar todo mês?</summary><p>Não. É pagamento único, sem mensalidade. O acesso é seu.</p></details>
       <details><summary>Para qual idade servem as atividades?</summary><p>Para a educação infantil e os primeiros anos, e podem ser adaptadas ao nível de cada criança.</p></details>
@@ -394,6 +395,27 @@ document.querySelectorAll('[data-checkout]').forEach(function (a) {
 });
 
 document.getElementById('ano').textContent = new Date().getFullYear();
+
+// Vídeos embutidos (só em preview.html): base64 -> Blob URL no formato que o navegador toca
+document.querySelectorAll('video[data-embed]').forEach(function (v) {
+  var tipo = v.canPlayType('video/webm; codecs="vp9, opus"') ? 'webm' : 'mp4';
+  var el = document.getElementById(v.dataset.embed + '-' + tipo);
+  if (!el) return;
+  var bin = atob(el.textContent), buf = new Uint8Array(bin.length);
+  for (var i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+  v.src = URL.createObjectURL(new Blob([buf], { type: 'video/' + tipo }));
+});
+
+// Vídeos: tocam só quando aparecem na tela (economiza dados no 4G)
+(function () {
+  var vs = document.querySelectorAll('.video video');
+  vs.forEach(function (v) { v.muted = true; });
+  if (!('IntersectionObserver' in window)) { vs.forEach(function (v) { v.play().catch(function () {}); }); return; }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { if (e.isIntersecting) e.target.play().catch(function () {}); else e.target.pause(); });
+  }, { threshold: 0.25 });
+  vs.forEach(function (v) { io.observe(v); });
+})();
 
 // Vídeos: botão de som
 document.querySelectorAll('.video').forEach(function (box) {
