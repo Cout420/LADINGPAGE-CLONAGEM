@@ -104,7 +104,10 @@ section { padding: var(--secao) 0; }
 
 
 /* Amostra: números por kit + etiquetas nas folhas */
-.numeros { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 760px; margin: 24px auto 0; }
+.amostra { display: grid; grid-template-columns: 320px 1fr; gap: 36px; align-items: center; max-width: 860px; margin: 28px auto 0; }
+.video.retrato { aspect-ratio: 4 / 5; }
+.numeros { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.amostra-txt { margin-top: 16px; color: var(--texto-suave); font-size: 0.95rem; }
 .num { border-radius: 14px; padding: 12px 8px; text-align: center; color: #fff; }
 .num strong { display: block; font-size: 1.5rem; font-weight: 900; line-height: 1.1; }
 .num span { font-size: 0.78rem; font-weight: 600; opacity: 0.95; }
@@ -124,8 +127,12 @@ section { padding: var(--secao) 0; }
 .folha.mais span { font-size: 0.9rem; }
 .folha.mais em { font-style: normal; font-weight: 800; margin-top: 10px; background: #fff; color: var(--azul-escuro); padding: 8px 14px; border-radius: 999px; font-size: 0.85rem; }
 .formato { text-align: center; margin-top: 14px; font-size: 0.88rem; color: var(--texto-suave); }
+@media (max-width: 860px) {
+  .amostra { grid-template-columns: 1fr; gap: 20px; }
+  .amostra .video { max-width: 340px; width: 100%; margin: 0 auto; }
+  .amostra-txt { text-align: center; }
+}
 @media (max-width: 600px) {
-  .numeros { grid-template-columns: repeat(2, 1fr); }
   .carrossel .folha img, .folha.mais { width: 150px; }
 }
 
@@ -292,11 +299,20 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
   <div class="container">
     <h2 class="titulo">Uma amostra de <mark>+8.000 atividades</mark></h2>
     <p class="sub">Estas são só algumas folhas. Nos 4 kits você recebe milhares de atividades como estas, separadas por tema.</p>
+    <div class="amostra">
+      <div class="video retrato">
+        <video poster="img/poster-produto.webp" muted loop playsinline preload="metadata"><source src="video/produto.webm" type="video/webm"><source src="video/produto.mp4" type="video/mp4"></video>
+        <button class="som" type="button">🔇 Ativar som</button>
+      </div>
+      <div>
     <div class="numeros">
-      <div class="num n-atencao"><strong>+3.000</strong><span>Atenção e Aprendizado</span></div>
-      <div class="num n-emocional"><strong>+4.000</strong><span>Controle Emocional</span></div>
-      <div class="num n-sensorial"><strong>+1.200</strong><span>Sensorial</span></div>
-      <div class="num n-planos"><strong>168</strong><span>Planos de Aula</span></div>
+        <div class="num n-atencao"><strong>+3.000</strong><span>Atenção e Aprendizado</span></div>
+        <div class="num n-emocional"><strong>+4.000</strong><span>Controle Emocional</span></div>
+        <div class="num n-sensorial"><strong>+1.200</strong><span>Sensorial</span></div>
+        <div class="num n-planos"><strong>168</strong><span>Planos de Aula</span></div>
+      </div>
+        <p class="amostra-txt">📄 Tudo em PDF colorido, tamanho A4. Chega no seu e-mail na hora e você imprime quantas vezes quiser.</p>
+      </div>
     </div>
     <div class="carrossel-wrap">
       <button class="seta esq" type="button" aria-label="Anterior" data-dir="-1">‹</button>
@@ -318,7 +334,6 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
       <button class="seta dir" type="button" aria-label="Próximo" data-dir="1">›</button>
     </div>
     <p class="dica" aria-hidden="true">⟵ arraste para ver mais ⟶</p>
-    <p class="formato">📄 PDF em A4 · imprima quantas vezes quiser · use em casa, na escola ou na terapia</p>
   </div>
 </section>
 
