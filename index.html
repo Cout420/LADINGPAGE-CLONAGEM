@@ -65,7 +65,7 @@ section { padding: var(--secao) 0; }
 .hero .sub { font-size: 1.12rem; margin-bottom: 24px; }
 .preco-hero { margin-top: 12px; font-size: 0.95rem; color: var(--texto-suave); }
 .preco-hero strong { color: var(--vermelho); }
-.hero .mockup { width: 100%; max-width: 720px; margin: 32px auto 0; border-radius: var(--raio); }
+.hero .mockup { width: 100%; height: auto; max-width: 900px; margin: 28px auto 0; border-radius: var(--raio); box-shadow: var(--sombra); }
 
 /* Dor + vídeo */
 .dor { max-width: 680px; margin: 0 auto; text-align: center; }
@@ -281,7 +281,10 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
     <p class="sub">Kits de atividades para crianças com autismo — atenção, emoções, sensorial e planos de aula. Baixe, imprima e use hoje.</p>
     <a class="btn" href="#oferta">Quero ver os kits</a>
     <p class="preco-hero">Kit Completo por <strong>R$ 27,90</strong> · ou só as atividades por R$ 9,90<br>⚡ Acesso imediato · 🛡️ Garantia de 7 dias</p>
-    <img class="mockup" src="img/hero.webp" alt="Folhas de atividades do Mundo Autista" width="940" height="625">
+    <picture>
+      <source media="(max-width: 600px)" srcset="img/hero-mobile.webp" width="800" height="800">
+      <img class="mockup" src="img/hero-desktop.webp" alt="Kit Completo Mundo Autista: 4 kits com +8.200 atividades por R$ 27,90" width="1440" height="960" fetchpriority="high">
+    </picture>
   </div>
 </section>
 
@@ -297,7 +300,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
 <!-- 3. PRÉVIAS -->
 <section>
   <div class="container">
-    <h2 class="titulo">Uma amostra de <mark>+8.000 atividades</mark></h2>
+    <h2 class="titulo">Uma amostra de <mark>+8.200 atividades</mark></h2>
     <p class="sub">Estas são só algumas folhas. Nos 4 kits você recebe milhares de atividades como estas, separadas por tema.</p>
     <div class="amostra">
       <div class="video retrato">
@@ -329,7 +332,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
         <figure class="folha"><img loading="lazy" decoding="async" src="img/previa-8.webp" alt="Que som é esse"><figcaption class="tag t-sensorial">Sensorial</figcaption></figure>
         <figure class="folha"><img loading="lazy" decoding="async" src="img/previa-9.webp" alt="Complete o padrão"><figcaption class="tag t-atencao">Atenção</figcaption></figure>
         <figure class="folha"><img loading="lazy" decoding="async" src="img/previa-5.webp" alt="Plano de aula"><figcaption class="tag t-planos">Planos de Aula</figcaption></figure>
-        <a class="folha mais" href="#oferta" draggable="false"><strong>+8.000</strong><span>outras atividades nos 4 kits</span><em>Ver os kits →</em></a>
+        <a class="folha mais" href="#oferta" draggable="false"><strong>+8.200</strong><span>outras atividades nos 4 kits</span><em>Ver os kits →</em></a>
       </div>
       <button class="seta dir" type="button" aria-label="Próximo" data-dir="1">›</button>
     </div>

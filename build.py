@@ -21,7 +21,7 @@ index = re.sub(r'<video data-video="(\w+)"([^>]*)></video>',
 (root / 'index.html').write_text(index)
 
 # Prévia: tudo embutido (imagens em data URI, vídeos em base64 antes do script principal)
-src = re.sub(r'\b(src|poster)="(img/[^"]+\.webp)"',
+src = re.sub(r'\b(src|srcset|poster)="(img/[^"]+\.webp)"',
              lambda m: f'{m.group(1)}="data:image/webp;base64,{b64(m.group(2))}"', src)
 # vídeos comentados no src não entram na prévia
 src = re.sub(r'<!--(?:(?!-->).)*?<video.*?-->', '', src, flags=re.S)
