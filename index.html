@@ -11,23 +11,24 @@
 <style>
 :root {
   /* Cor: primária */
-  --color-primary:      #AD6EC3;
-  --color-primary-dark: #6B3F82;
-  --color-primary-50:   #F6EFFA;
-  --color-primary-100:  #F0E4F7;
-  --color-primary-200:  #EEE3F5;
-  --color-primary-300:  #C9B9D4;
-  --color-primary-400:  #B79FC4;
+  --color-primary:      #1E73BE;
+  --color-primary-dark: #0F3D73;
+  --color-primary-50:   #EEF5FC;
+  --color-primary-100:  #DCEBF8;
+  --color-primary-200:  #D6E6F5;
+  --color-primary-300:  #A9C4DE;
+  --color-primary-400:  #8FAFCF;
 
   /* Cor: semântica */
   --background:     #FFFFFF;
   --background-alt: var(--color-primary-50);
   --surface:        #FFFFFF;
   --border:         var(--color-primary-200);
-  --text:           #2E1F38;
-  --text-muted:     #6B5C77;
+  --text:           #14233A;
+  --text-muted:     #4F5F73;
 
   --gradient-offer: linear-gradient(160deg, var(--color-primary-dark), var(--color-primary));
+  --puzzle: linear-gradient(90deg, #E63946 0 25%, #F4B400 25% 50%, #2A9D8F 50% 75%, #1E73BE 75%);
 
   /* Tipografia */
   --font-sans: Inter, 'Segoe UI', -apple-system, sans-serif;
@@ -43,11 +44,12 @@
   --radius-card:  18px;
   --radius-offer: 24px;
   --radius-pill:  999px;
-  --shadow-soft:  0 10px 30px rgba(107, 63, 130, 0.12);
-  --shadow-toast: 0 12px 32px rgba(107, 63, 130, 0.22);
+  --shadow-soft:  0 10px 30px rgba(15, 61, 115, 0.12);
+  --shadow-toast: 0 12px 32px rgba(15, 61, 115, 0.22);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
+body::before { content: ""; display: block; height: 6px; background: var(--puzzle); }
 body {
   font-family: var(--font-sans);
   color: var(--text);
@@ -193,7 +195,7 @@ h2 { text-align: center; font-size: 2rem; color: var(--color-primary-dark); marg
 .bonus-card h4 { color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 6px; }
 .bonus-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 10px; }
 .riscado { text-decoration: line-through; color: var(--color-primary-400); font-weight: 700; }
-.gratis { color: var(--color-primary-dark); font-weight: 800; margin-left: 6px; }
+.gratis { color: #1F7A70; font-weight: 800; margin-left: 6px; }
 
 /* Oferta */
 .oferta-box {
