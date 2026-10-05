@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mundo Autista — Atividades prontas para imprimir</title>
-<meta name="description" content="Kits de atividades para crianças com autismo: atenção, emoções, sensorial e planos de aula. Baixe, imprima e use hoje. A partir de R$ 7.">
+<meta name="description" content="Kits de atividades para crianças com autismo: atenção, emoções, sensorial e planos de aula. Baixe, imprima e use hoje. A partir de R$ 9,90.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -159,6 +159,7 @@ section { padding: var(--secao) 0; }
 .preco .por small { font-size: 1.1rem; font-weight: 800; vertical-align: 0.9em; margin-right: 2px; }
 .preco .economia { margin-top: 6px; font-size: 0.85rem; color: var(--texto-suave); }
 .preco .economia s { color: var(--vermelho); }
+.preco .economize { display: inline-block; margin-top: 6px; background: #E8F5EE; color: #146C43; padding: 4px 10px; border-radius: 999px; font-size: 0.85rem; }
 .preco .unico { font-size: 0.88rem; color: var(--texto-suave); }
 .confianca { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px; margin-top: 14px; font-size: 0.82rem; color: var(--texto-suave); }
 
@@ -180,6 +181,13 @@ section { padding: var(--secao) 0; }
 .kit h4 { font-size: 0.95rem; color: var(--azul-escuro); }
 .kit .qtd { font-size: 0.82rem; color: var(--texto-suave); }
 .kit .valor { font-weight: 900; font-size: 1.25rem; color: var(--texto); margin-top: auto; }
+
+/* Como comprar */
+.passos { list-style: none; counter-reset: p; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 760px; margin: 36px auto 0; }
+.passos li { counter-increment: p; background: #fff; border: 1px solid var(--borda); border-radius: 14px; padding: 14px; font-size: 0.88rem; color: var(--texto-suave); display: flex; gap: 10px; align-items: center; }
+.passos li::before { content: counter(p); flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; background: var(--azul); color: #fff; font-weight: 900; display: flex; align-items: center; justify-content: center; }
+.passos strong { color: var(--texto); }
+@media (max-width: 600px) { .passos { grid-template-columns: 1fr; } }
 
 /* Bônus */
 .bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
@@ -246,7 +254,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
     <h1>Atividades prontas para imprimir. <span>Mais tempo com a criança.</span></h1>
     <p class="sub">Kits de atividades para crianças com autismo — atenção, emoções, sensorial e planos de aula. Baixe, imprima e use hoje.</p>
     <a class="btn" href="#oferta">Quero ver os kits</a>
-    <p class="preco-hero">Kits a partir de <strong>R$ 7</strong> · Kit completo por <strong>R$ 27,90</strong><br>⚡ Acesso imediato · 🛡️ Garantia de 7 dias</p>
+    <p class="preco-hero">Kits a partir de <strong>R$ 9,90</strong> · Kit completo por <strong>R$ 27,90</strong><br>⚡ Acesso imediato · 🛡️ Garantia de 7 dias</p>
     <img class="mockup" src="img/hero.webp" alt="Folhas de atividades do Mundo Autista" width="940" height="625">
   </div>
 </section>
@@ -336,7 +344,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
     <p class="sub">Pagamento único. Acesso imediato no seu e-mail.</p>
 
     <div class="oferta">
-      <!-- Vídeo dos kits: volta aqui quando o criativo tiver o preço "separados" corrigido (soma real R$ 30,90).
+      <!-- Vídeo dos kits: volta aqui quando o criativo tiver o preço "separados" corrigido (soma real R$ 54,60).
       <div class="video quadrado">
         <video data-video="kits" poster="img/poster-kits.webp" muted loop playsinline preload="metadata"></video>
         <button class="som" type="button">🔇 Ativar som</button>
@@ -356,7 +364,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
         <div class="preco">
           <div class="por"><small>R$</small>27,90</div>
           <div class="unico">pagamento único · sem mensalidade</div>
-          <div class="economia">Separados sairiam <s>R$ 30,90</s> e <strong>sem os bônus</strong></div>
+          <div class="economia">Separados sairiam <s>R$ 54,60</s> e sem os bônus.<br><strong class="economize">Você economiza R$ 26,70 + leva 6 bônus</strong></div>
         </div>
         <a class="btn bloco" href="#" data-checkout="completo">Quero o Kit Completo</a>
         <div class="confianca"><span>⚡ Acesso imediato</span><span>🔒 Pagamento seguro</span><span>📱 Celular, tablet ou PC</span></div>
@@ -367,12 +375,18 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
       </div>
     </div>
 
-    <p class="avulsos-titulo">Prefere um kit só? A partir de R$ 7:</p>
+
+    <ol class="passos">
+      <li><span><strong>Escolha</strong> o Kit Completo ou um kit avulso</span></li>
+      <li><span><strong>Pague</strong> no Pix ou cartão, em ambiente seguro</span></li>
+      <li><span><strong>Receba</strong> o acesso no e-mail na hora e imprima</span></li>
+    </ol>
+    <p class="avulsos-titulo">Prefere um kit só?</p>
     <div class="avulsos">
       <div class="kit"><img src="img/kit-1.webp" alt="Kit +3.000 Atividades"><div class="info"><h4>Atenção e Aprendizado</h4><span class="qtd">+3.000 atividades</span><span class="valor">R$ 9,90</span><a class="btn secundario" href="#" data-checkout="atencao">Comprar</a></div></div>
-      <div class="kit"><img src="img/kit-2.webp" alt="Kit Controle Emocional"><div class="info"><h4>Controle Emocional</h4><span class="qtd">+4.000 atividades</span><span class="valor">R$ 7,00</span><a class="btn secundario" href="#" data-checkout="emocional">Comprar</a></div></div>
-      <div class="kit"><img src="img/kit-3.webp" alt="Kit Sensorial"><div class="info"><h4>Sensorial</h4><span class="qtd">+1.200 atividades</span><span class="valor">R$ 7,00</span><a class="btn secundario" href="#" data-checkout="sensorial">Comprar</a></div></div>
-      <div class="kit"><img src="img/kit-4.webp" alt="Kit Planos de Aula"><div class="info"><h4>Planos de Aula</h4><span class="qtd">168 planos</span><span class="valor">R$ 7,00</span><a class="btn secundario" href="#" data-checkout="planos">Comprar</a></div></div>
+      <div class="kit"><img src="img/kit-2.webp" alt="Kit Controle Emocional"><div class="info"><h4>Controle Emocional</h4><span class="qtd">+4.000 atividades</span><span class="valor">R$ 14,90</span><a class="btn secundario" href="#" data-checkout="emocional">Comprar</a></div></div>
+      <div class="kit"><img src="img/kit-3.webp" alt="Kit Sensorial"><div class="info"><h4>Sensorial</h4><span class="qtd">+1.200 atividades</span><span class="valor">R$ 14,90</span><a class="btn secundario" href="#" data-checkout="sensorial">Comprar</a></div></div>
+      <div class="kit"><img src="img/kit-4.webp" alt="Kit Planos de Aula"><div class="info"><h4>Planos de Aula</h4><span class="qtd">168 planos</span><span class="valor">R$ 14,90</span><a class="btn secundario" href="#" data-checkout="planos">Comprar</a></div></div>
     </div>
   </div>
 </section>
@@ -391,7 +405,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
     </div>
     <div class="cta">
       <a class="btn" href="#oferta">Escolher meu kit</a>
-      <p class="nota">Kit completo por R$ 27,90 · ou a partir de R$ 7</p>
+      <p class="nota">Kit completo por R$ 27,90 · ou a partir de R$ 9,90</p>
     </div>
   </div>
 </section>
@@ -434,7 +448,7 @@ if (PIXEL_ID) {
 function rastreia(evento, dados) { if (window.fbq) fbq('track', evento, dados); }
 
 // Botões de compra: link real + UTMs do anúncio repassadas ao checkout (atribuição de venda)
-var VALORES = { completo: 27.90, atencao: 9.90, emocional: 7.00, sensorial: 7.00, planos: 7.00 };
+var VALORES = { completo: 27.90, atencao: 9.90, emocional: 14.90, sensorial: 14.90, planos: 14.90 };
 document.querySelectorAll('[data-checkout]').forEach(function (a) {
   var chave = a.dataset.checkout, url = CHECKOUT[chave];
   if (!url) { a.href = '#oferta'; return; }
