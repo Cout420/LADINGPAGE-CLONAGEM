@@ -477,8 +477,8 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
 // ===== CONFIGURAÇÃO =====================================================
 // Links de checkout de cada produto.
 var CHECKOUT = {
-  completo:  '',
-  atencao:   '',
+  completo:  'https://pay.kiwify.com.br/RvSzxi7',
+  atencao:   'https://pay.kiwify.com.br/yXoMQDB',
   emocional: '',
   sensorial: '',
   planos:    ''
@@ -508,6 +508,11 @@ document.querySelectorAll('[data-checkout]').forEach(function (a) {
     rastreia('InitiateCheckout', { content_name: chave, value: VALORES[chave], currency: 'BRL' });
   });
 });
+
+// Kits avulsos de R$ 14,90: só aparecem quando tiverem checkout
+if (!CHECKOUT.emocional && !CHECKOUT.sensorial && !CHECKOUT.planos) {
+  var outros = document.querySelector('.outros'); if (outros) outros.hidden = true;
+}
 
 // Rodapé legal: só mostra os links preenchidos
 var legais = document.getElementById('legais');
