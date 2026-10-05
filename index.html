@@ -88,8 +88,8 @@ h2 { text-align: center; font-size: 2rem; color: var(--color-primary-dark); marg
 .hero h1 { font-size: 2.6rem; max-width: 720px; margin: 0 auto 18px; }
 .hero h1 span { color: var(--color-primary); }
 .hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 560px; margin: 0 auto 32px; }
-.hero .mockup {
-  max-width: 420px; aspect-ratio: 4 / 3; margin: 40px auto 0;
+.hero .mockup { display: block; width: 100%; height: auto; object-fit: contain;
+  max-width: 720px; margin: 40px auto 0;
   border-radius: var(--radius-card); box-shadow: var(--shadow-soft);
 }
 
@@ -133,7 +133,7 @@ h2 { text-align: center; font-size: 2rem; color: var(--color-primary-dark); marg
 .carrossel::-webkit-scrollbar { display: none; }
 .carrossel.arrastando { cursor: grabbing; scroll-snap-type: none; scroll-behavior: auto; }
 .carrossel .item {
-  flex: 0 0 auto; width: 180px; aspect-ratio: 210 / 297;
+  flex: 0 0 auto; width: 200px; height: auto; aspect-ratio: auto;
   scroll-snap-align: start; border-radius: 10px; box-shadow: var(--shadow-soft);
   pointer-events: none;
 }
@@ -158,7 +158,7 @@ h2 { text-align: center; font-size: 2rem; color: var(--color-primary-dark); marg
 
 /* Estilos */
 .estilos-grid figure { text-align: center; }
-.estilos-grid .item { aspect-ratio: 210 / 297; border-radius: 12px; box-shadow: var(--shadow-soft); }
+.estilos-grid .item { width: 100%; display: block; aspect-ratio: 300 / 338; border-radius: 12px; box-shadow: var(--shadow-soft); }
 .estilos-grid figcaption {
   margin-top: 10px; font-weight: 700; color: var(--color-primary-dark);
   letter-spacing: 0.05em; font-size: 0.85rem;
@@ -177,7 +177,7 @@ h2 { text-align: center; font-size: 2rem; color: var(--color-primary-dark); marg
 
 /* Membros */
 .membros { display: flex; align-items: center; gap: 48px; }
-.membros .item { width: 45%; flex-shrink: 0; aspect-ratio: 4 / 3; border-radius: var(--radius-card); box-shadow: var(--shadow-soft); }
+.membros .item { width: 45%; flex-shrink: 0; height: auto; border-radius: var(--radius-card); box-shadow: var(--shadow-soft); }
 .membros h2 { text-align: left; }
 .membros p { color: var(--text-muted); margin-bottom: 16px; }
 .membros li { padding: 5px 0; color: var(--text-muted); }
@@ -295,7 +295,7 @@ footer { padding: 40px 0; text-align: center; font-size: 0.85rem; color: var(--t
     <h1>Documente com segurança. <span>Transmita autoridade.</span></h1>
     <p>Modelos de documentos prontos e editáveis para pet shops, banho &amp; tosa e clínicas — com cara profissional desde o primeiro atendimento.</p>
     <a class="btn" href="#oferta">Quero meus documentos</a>
-    <div class="mockup ph" role="img" aria-label="Mockup do produto">Mockup do produto</div>
+    <img class="mockup" src="img/hero.webp" alt="Prévia das atividades para imprimir" width="940" height="625">
   </div>
 </section>
 
@@ -329,14 +329,11 @@ footer { padding: 40px 0; text-align: center; font-size: 0.85rem; color: var(--t
     <div class="carrossel-wrap">
       <button class="carrossel-seta esquerda" type="button" aria-label="Anterior" data-dir="-1">‹</button>
       <div class="carrossel" id="carrossel" tabindex="0" aria-label="Prévias dos documentos">
-        <div class="item ph">Ficha de cadastro</div>
-        <div class="item ph">Termo de banho</div>
-        <div class="item ph">Checklist de entrada</div>
-        <div class="item ph">Autorização de tosa</div>
-        <div class="item ph">Carteira de vacina</div>
-        <div class="item ph">Recibo</div>
-        <div class="item ph">Orçamento</div>
-        <div class="item ph">Termo de hospedagem</div>
+        <img class="item" src="img/previa-1.webp" alt="Ligue à sombra" loading="lazy">
+        <img class="item" src="img/previa-2.webp" alt="Conte e pinte" loading="lazy">
+        <img class="item" src="img/previa-3.webp" alt="Termômetro das emoções" loading="lazy">
+        <img class="item" src="img/previa-4.webp" alt="Toque e descubra" loading="lazy">
+        <img class="item" src="img/previa-5.webp" alt="Plano de aula" loading="lazy">
       </div>
       <button class="carrossel-seta direita" type="button" aria-label="Próximo" data-dir="1">›</button>
     </div>
@@ -349,10 +346,10 @@ footer { padding: 40px 0; text-align: center; font-size: 0.85rem; color: var(--t
     <p class="eyebrow">Estilos</p>
     <h2>Quatro identidades, um só pacote</h2>
     <div class="estilos-grid">
-      <figure><div class="item ph">Luxo</div><figcaption>LUXO</figcaption></figure>
-      <figure><div class="item ph">Clean</div><figcaption>CLEAN</figcaption></figure>
-      <figure><div class="item ph">Lavanda</div><figcaption>LAVANDA</figcaption></figure>
-      <figure><div class="item ph">Nude</div><figcaption>NUDE</figcaption></figure>
+      <figure><img class="item" src="img/kit-1.webp" alt="Kit +3.000 Atividades" loading="lazy"><figcaption>+3.000 ATIVIDADES</figcaption></figure>
+      <figure><img class="item" src="img/kit-2.webp" alt="Kit Controle Emocional" loading="lazy"><figcaption>CONTROLE EMOCIONAL</figcaption></figure>
+      <figure><img class="item" src="img/kit-3.webp" alt="Kit Sensorial" loading="lazy"><figcaption>SENSORIAL</figcaption></figure>
+      <figure><img class="item" src="img/kit-4.webp" alt="Kit Planos de Aula" loading="lazy"><figcaption>PLANOS DE AULA</figcaption></figure>
     </div>
   </div>
 </section>
@@ -386,7 +383,7 @@ footer { padding: 40px 0; text-align: center; font-size: 0.85rem; color: var(--t
 <section class="section-suave">
   <div class="container">
     <div class="membros">
-      <div class="item ph" role="img" aria-label="Área de membros">Área de membros</div>
+      <img class="item" src="img/membros.webp" alt="Área de membros com os materiais organizados" loading="lazy">
       <div>
         <p class="eyebrow" style="text-align:left">Acesso</p>
         <h2>Área de membros organizada</h2>
