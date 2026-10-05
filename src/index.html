@@ -7,7 +7,10 @@
 <meta name="description" content="Kits de atividades para crianças com autismo: atenção, emoções, sensorial e planos de aula. Baixe, imprima e use hoje. A partir de R$ 9,90.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" media="print" onload="this.media='all'">
+<link rel="preload" as="image" href="img/hero-mobile.webp" media="(max-width: 600px)">
+<link rel="preload" as="image" href="img/hero-desktop.webp" media="(min-width: 601px)">
 <style>
 :root {
   --azul:        #1E73BE;
@@ -281,7 +284,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
     <h1>Atividades prontas para imprimir. <span>Mais tempo com a criança.</span></h1>
     <p class="sub">Kits de atividades para crianças com autismo — atenção, emoções, sensorial e planos de aula. Baixe, imprima e use hoje.</p>
     <picture>
-      <source media="(max-width: 600px)" srcset="img/hero-mobile.webp" width="800" height="800">
+      <source media="(max-width: 600px)" srcset="img/hero-mobile.webp" width="720" height="720">
       <img class="mockup" src="img/hero-desktop.webp" alt="Kit Completo Mundo Autista: 4 kits com +8.200 atividades por R$ 27,90" width="1440" height="960" fetchpriority="high">
     </picture>
     <a class="btn" href="#oferta">Quero o Kit Completo</a>
@@ -305,7 +308,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
     <p class="sub">Estas são só algumas folhas. Nos 4 kits você recebe milhares de atividades como estas, separadas por tema.</p>
     <div class="amostra">
       <div class="video retrato">
-        <video data-video="produto" poster="img/poster-produto.webp" muted loop playsinline preload="metadata"></video>
+        <video data-video="produto" poster="img/poster-produto.webp" muted loop playsinline preload="none"></video>
         <button class="som" type="button">🔇 Ativar som</button>
       </div>
       <div>
@@ -381,7 +384,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
     <div class="oferta">
       <!-- Vídeo dos kits: volta aqui quando o criativo tiver o preço "separados" corrigido (soma real R$ 54,60).
       <div class="video quadrado">
-        <video data-video="kits" poster="img/poster-kits.webp" muted loop playsinline preload="metadata"></video>
+        <video data-video="kits" poster="img/poster-kits.webp" muted loop playsinline preload="none"></video>
         <button class="som" type="button">🔇 Ativar som</button>
       </div>
       -->
