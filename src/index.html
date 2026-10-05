@@ -134,7 +134,6 @@ section { padding: var(--secao) 0; }
 .depoimentos img { width: 100%; margin-bottom: 16px; break-inside: avoid; border-radius: 12px; border: 1px solid var(--borda); box-shadow: var(--sombra); }
 
 /* Oferta */
-.oferta { max-width: 480px; margin: 32px auto 0; }
 .combo {
   position: relative; background: #fff; border: 3px solid var(--vermelho); border-radius: 22px;
   padding: 30px 26px 26px; box-shadow: 0 16px 40px rgba(214, 40, 57, 0.16);
@@ -181,6 +180,26 @@ section { padding: var(--secao) 0; }
 .kit h4 { font-size: 0.95rem; color: var(--azul-escuro); }
 .kit .qtd { font-size: 0.82rem; color: var(--texto-suave); }
 .kit .valor { font-weight: 900; font-size: 1.25rem; color: var(--texto); margin-top: auto; }
+
+
+/* Duas opções: completo (destaque) x básico */
+.oferta { display: grid; grid-template-columns: 1.25fr 1fr; gap: 20px; align-items: center; max-width: 860px; margin: 36px auto 0; }
+.basico { background: #fff; border: 1px solid var(--borda); border-radius: 18px; padding: 24px 22px; }
+.basico h3 { font-size: 1.15rem; text-align: center; color: var(--texto); }
+.basico .resumo { text-align: center; color: var(--texto-suave); font-size: 0.88rem; margin: 2px 0 14px; }
+.lista li.nao { color: #9AA6B4; text-decoration: line-through; }
+.lista li.nao::before { content: "✕"; color: #C3CBD5; }
+.preco .por.pequeno { font-size: 2.2rem; color: var(--texto); }
+.diferenca { margin-top: 14px; font-size: 0.85rem; color: var(--texto-suave); text-align: center; background: #FFF6DB; border-radius: 10px; padding: 10px; }
+.diferenca strong { color: var(--texto); }
+.outros { max-width: 860px; margin: 28px auto 0; }
+.outros summary { cursor: pointer; text-align: center; color: var(--texto-suave); font-size: 0.9rem; font-weight: 600; text-decoration: underline; list-style: none; }
+.outros summary::-webkit-details-marker { display: none; }
+.outros .avulsos { grid-template-columns: repeat(3, 1fr); margin-top: 16px; }
+@media (max-width: 860px) {
+  .oferta { grid-template-columns: 1fr; max-width: 480px; }
+  .outros .avulsos { grid-template-columns: repeat(2, 1fr); }
+}
 
 /* Como comprar */
 .passos { list-style: none; counter-reset: p; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 760px; margin: 36px auto 0; }
@@ -254,7 +273,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
     <h1>Atividades prontas para imprimir. <span>Mais tempo com a criança.</span></h1>
     <p class="sub">Kits de atividades para crianças com autismo — atenção, emoções, sensorial e planos de aula. Baixe, imprima e use hoje.</p>
     <a class="btn" href="#oferta">Quero ver os kits</a>
-    <p class="preco-hero">Kits a partir de <strong>R$ 9,90</strong> · Kit completo por <strong>R$ 27,90</strong><br>⚡ Acesso imediato · 🛡️ Garantia de 7 dias</p>
+    <p class="preco-hero">Kit Completo por <strong>R$ 27,90</strong> · ou só as atividades por R$ 9,90<br>⚡ Acesso imediato · 🛡️ Garantia de 7 dias</p>
     <img class="mockup" src="img/hero.webp" alt="Folhas de atividades do Mundo Autista" width="940" height="625">
   </div>
 </section>
@@ -332,7 +351,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
       <div class="bonus"><img src="img/bonus-6.webp" alt="Guia rápido: como aplicar"><div class="conteudo"><h4>Guia rápido</h4><p>Como aplicar as atividades no dia a dia.</p><span class="gratis">🎁 Grátis</span></div></div>
     </div>
     <div class="cta">
-      <a class="btn" href="#oferta">Ver o preço do Kit Completo</a>
+      <a class="btn" href="#oferta">Quero o Kit Completo com os bônus</a>
     </div>
   </div>
 </section>
@@ -351,9 +370,9 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
       </div>
       -->
       <div class="combo">
-        <span class="selo-top">⭐ Mais escolhido</span>
+        <span class="selo-top">⭐ Melhor custo-benefício</span>
         <h3>Kit Completo</h3>
-        <p class="resumo">Os 4 kits + 6 bônus exclusivos</p>
+        <p class="resumo">Tudo do kit básico + 3 kits + 6 bônus</p>
         <ul class="lista">
           <li><span><b>Atenção e Aprendizado</b> · +3.000 atividades</span></li>
           <li><span><b>Controle Emocional</b> · +4.000 atividades</span></li>
@@ -373,21 +392,36 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
           <p><strong>Garantia de 7 dias.</strong> Baixe, imprima e use. Se não gostar, devolvemos 100% do valor, sem perguntas.</p>
         </div>
       </div>
+      <div class="basico">
+        <h3>Só Atividades</h3>
+        <p class="resumo">Para começar</p>
+        <ul class="lista">
+          <li><span><b>Atenção e Aprendizado</b> · +3.000 atividades</span></li>
+          <li class="nao"><span>Controle Emocional</span></li>
+          <li class="nao"><span>Sensorial</span></li>
+          <li class="nao"><span>Planos de Aula</span></li>
+          <li class="nao"><span>6 bônus</span></li>
+        </ul>
+        <div class="preco"><div class="por pequeno"><small>R$</small>9,90</div><div class="unico">pagamento único</div></div>
+        <a class="btn secundario bloco" href="#" data-checkout="atencao">Quero só as atividades</a>
+        <p class="diferenca">Por só <strong>+R$ 18</strong> você leva <strong>+5.200 atividades</strong>, 168 planos de aula e os 6 bônus</p>
+      </div>
     </div>
 
 
     <ol class="passos">
-      <li><span><strong>Escolha</strong> o Kit Completo ou um kit avulso</span></li>
+      <li><span><strong>Escolha</strong> o seu kit</span></li>
       <li><span><strong>Pague</strong> no Pix ou cartão, em ambiente seguro</span></li>
       <li><span><strong>Receba</strong> o acesso no e-mail na hora e imprima</span></li>
     </ol>
-    <p class="avulsos-titulo">Prefere um kit só?</p>
-    <div class="avulsos">
-      <div class="kit"><img src="img/kit-1.webp" alt="Kit +3.000 Atividades"><div class="info"><h4>Atenção e Aprendizado</h4><span class="qtd">+3.000 atividades</span><span class="valor">R$ 9,90</span><a class="btn secundario" href="#" data-checkout="atencao">Comprar</a></div></div>
+    <details class="outros">
+      <summary>Quer só um dos outros kits? Ver kits avulsos</summary>
+      <div class="avulsos">
       <div class="kit"><img src="img/kit-2.webp" alt="Kit Controle Emocional"><div class="info"><h4>Controle Emocional</h4><span class="qtd">+4.000 atividades</span><span class="valor">R$ 14,90</span><a class="btn secundario" href="#" data-checkout="emocional">Comprar</a></div></div>
       <div class="kit"><img src="img/kit-3.webp" alt="Kit Sensorial"><div class="info"><h4>Sensorial</h4><span class="qtd">+1.200 atividades</span><span class="valor">R$ 14,90</span><a class="btn secundario" href="#" data-checkout="sensorial">Comprar</a></div></div>
       <div class="kit"><img src="img/kit-4.webp" alt="Kit Planos de Aula"><div class="info"><h4>Planos de Aula</h4><span class="qtd">168 planos</span><span class="valor">R$ 14,90</span><a class="btn secundario" href="#" data-checkout="planos">Comprar</a></div></div>
-    </div>
+      </div>
+    </details>
   </div>
 </section>
 
@@ -405,7 +439,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
     </div>
     <div class="cta">
       <a class="btn" href="#oferta">Escolher meu kit</a>
-      <p class="nota">Kit completo por R$ 27,90 · ou a partir de R$ 9,90</p>
+      <p class="nota">Kit Completo por R$ 27,90 · pagamento único</p>
     </div>
   </div>
 </section>
