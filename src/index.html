@@ -68,7 +68,7 @@ section { padding: var(--secao) 0; }
 .hero .mockup { width: 100%; max-width: 720px; margin: 32px auto 0; border-radius: var(--raio); }
 
 /* Dor + vídeo */
-.dor { display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: center; max-width: 900px; margin: 0 auto; }
+.dor { max-width: 680px; margin: 0 auto; text-align: center; }
 .dor h2 { font-size: 1.9rem; color: var(--azul-escuro); margin-bottom: 14px; }
 .dor p { color: var(--texto-suave); margin-bottom: 12px; }
 .dor p strong { color: var(--texto); }
@@ -134,7 +134,7 @@ section { padding: var(--secao) 0; }
 .depoimentos img { width: 100%; margin-bottom: 16px; break-inside: avoid; border-radius: 12px; border: 1px solid var(--borda); box-shadow: var(--sombra); }
 
 /* Oferta */
-.oferta { display: grid; grid-template-columns: 1fr 1.1fr; gap: 32px; align-items: start; margin-top: 32px; }
+.oferta { max-width: 480px; margin: 32px auto 0; }
 .combo {
   position: relative; background: #fff; border: 3px solid var(--vermelho); border-radius: 22px;
   padding: 30px 26px 26px; box-shadow: 0 16px 40px rgba(214, 40, 57, 0.16);
@@ -157,6 +157,8 @@ section { padding: var(--secao) 0; }
 .preco .de s { color: var(--vermelho); }
 .preco .por { font-size: 3.2rem; font-weight: 900; color: var(--vermelho); letter-spacing: -0.03em; line-height: 1.05; }
 .preco .por small { font-size: 1.1rem; font-weight: 800; vertical-align: 0.9em; margin-right: 2px; }
+.preco .economia { margin-top: 6px; font-size: 0.85rem; color: var(--texto-suave); }
+.preco .economia s { color: var(--vermelho); }
 .preco .unico { font-size: 0.88rem; color: var(--texto-suave); }
 .confianca { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px; margin-top: 14px; font-size: 0.82rem; color: var(--texto-suave); }
 
@@ -193,6 +195,8 @@ section { padding: var(--secao) 0; }
 .faq summary { font-weight: 700; cursor: pointer; }
 .faq p { margin-top: 8px; color: var(--texto-suave); font-size: 0.95rem; }
 
+.legais { margin-bottom: 8px; }
+.legais a { color: var(--texto-suave); margin: 0 8px; }
 footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: var(--texto-suave); }
 
 /* Barra fixa de compra (celular) */
@@ -218,11 +222,6 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
   .hero h1 { font-size: 1.85rem; }
   .hero .sub { font-size: 1rem; }
   .titulo, .dor h2 { font-size: 1.55rem; }
-  .dor { grid-template-columns: 1fr; gap: 24px; text-align: center; }
-  .dor .video { max-width: 280px; margin: 0 auto; }
-  .oferta { grid-template-columns: 1fr; }
-  .combo { order: -1; }
-  .oferta .video { max-width: 420px; margin: 0 auto; width: 100%; }
   .avulsos { grid-template-columns: repeat(2, 1fr); }
   .bonus-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .depoimentos { columns: auto; display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
@@ -252,19 +251,12 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
   </div>
 </section>
 
-<!-- 2. DOR -->
+<!-- 2. DOR (o vídeo da dor já é o anúncio: aqui só reforça em 3 linhas) -->
 <section class="suave">
   <div class="container dor">
-    <div class="video vertical">
-      <video data-video="dor" poster="img/poster-dor.webp" muted loop playsinline preload="metadata"></video>
-      <button class="som" type="button">🔇 Ativar som</button>
-    </div>
-    <div>
-      <h2>23h. A criança dormiu. E você ainda está procurando atividade.</h2>
-      <p>PDF que não abre, site cheio de anúncio, material que não serve para ela. No dia seguinte, ela olha, se frustra e larga em dois minutos.</p>
-      <p>Não é falta de esforço seu. É falta de material feito para ela: <strong>visual, curto e previsível.</strong></p>
-      <p><strong>Com o Mundo Autista, você escolhe, imprime e aplica em 5 minutos.</strong></p>
-    </div>
+    <h2>23h. A criança dormiu. E você ainda está procurando atividade.</h2>
+    <p>PDF que não abre, site cheio de anúncio, material que não serve para ela. No dia seguinte, ela se frustra e larga em dois minutos.</p>
+    <p><strong>Não é falta de esforço seu. É falta de material feito para ela: visual, curto e previsível.</strong></p>
   </div>
 </section>
 
@@ -318,18 +310,38 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
   </div>
 </section>
 
-<!-- 5. OFERTA -->
-<section id="oferta">
+<!-- 5. BÔNUS (antes do preço: empilha valor) -->
+<section>
+  <div class="container">
+    <h2 class="titulo">No Kit Completo você ainda leva <mark>6 bônus</mark></h2>
+    <p class="sub">Materiais extras para organizar a rotina e celebrar cada conquista.</p>
+    <div class="bonus-grid">
+      <div class="bonus"><img src="img/bonus-1.webp" alt="Rotina visual para imprimir"><div class="conteudo"><h4>Rotina visual</h4><p>Cartões para organizar o dia da criança.</p><span class="gratis">🎁 Grátis</span></div></div>
+      <div class="bonus"><img src="img/bonus-2.webp" alt="Cartões de emoções"><div class="conteudo"><h4>Cartões de emoções</h4><p>Para nomear o que sente.</p><span class="gratis">🎁 Grátis</span></div></div>
+      <div class="bonus"><img src="img/bonus-3.webp" alt="Quadro de recompensas"><div class="conteudo"><h4>Quadro de recompensas</h4><p>Estrelas para celebrar cada conquista.</p><span class="gratis">🎁 Grátis</span></div></div>
+      <div class="bonus"><img src="img/bonus-4.webp" alt="Calendário 30 dias de atividades"><div class="conteudo"><h4>Calendário 30 dias</h4><p>Uma atividade sugerida para cada dia.</p><span class="gratis">🎁 Grátis</span></div></div>
+      <div class="bonus"><img src="img/bonus-5.webp" alt="Certificados de conquista"><div class="conteudo"><h4>Certificados</h4><p>Para imprimir e comemorar.</p><span class="gratis">🎁 Grátis</span></div></div>
+      <div class="bonus"><img src="img/bonus-6.webp" alt="Guia rápido: como aplicar"><div class="conteudo"><h4>Guia rápido</h4><p>Como aplicar as atividades no dia a dia.</p><span class="gratis">🎁 Grátis</span></div></div>
+    </div>
+    <div class="cta">
+      <a class="btn" href="#oferta">Ver o preço do Kit Completo</a>
+    </div>
+  </div>
+</section>
+
+<!-- 6. OFERTA -->
+<section class="suave" id="oferta">
   <div class="container">
     <h2 class="titulo">Escolha seu kit</h2>
     <p class="sub">Pagamento único. Acesso imediato no seu e-mail.</p>
 
     <div class="oferta">
+      <!-- Vídeo dos kits: volta aqui quando o criativo tiver o preço "separados" corrigido (soma real R$ 30,90).
       <div class="video quadrado">
         <video data-video="kits" poster="img/poster-kits.webp" muted loop playsinline preload="metadata"></video>
         <button class="som" type="button">🔇 Ativar som</button>
       </div>
-
+      -->
       <div class="combo">
         <span class="selo-top">⭐ Mais escolhido</span>
         <h3>Kit Completo</h3>
@@ -344,6 +356,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
         <div class="preco">
           <div class="por"><small>R$</small>27,90</div>
           <div class="unico">pagamento único · sem mensalidade</div>
+          <div class="economia">Separados sairiam <s>R$ 30,90</s> e <strong>sem os bônus</strong></div>
         </div>
         <a class="btn bloco" href="#" data-checkout="completo">Quero o Kit Completo</a>
         <div class="confianca"><span>⚡ Acesso imediato</span><span>🔒 Pagamento seguro</span><span>📱 Celular, tablet ou PC</span></div>
@@ -360,26 +373,6 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
       <div class="kit"><img src="img/kit-2.webp" alt="Kit Controle Emocional"><div class="info"><h4>Controle Emocional</h4><span class="qtd">+4.000 atividades</span><span class="valor">R$ 7,00</span><a class="btn secundario" href="#" data-checkout="emocional">Comprar</a></div></div>
       <div class="kit"><img src="img/kit-3.webp" alt="Kit Sensorial"><div class="info"><h4>Sensorial</h4><span class="qtd">+1.200 atividades</span><span class="valor">R$ 7,00</span><a class="btn secundario" href="#" data-checkout="sensorial">Comprar</a></div></div>
       <div class="kit"><img src="img/kit-4.webp" alt="Kit Planos de Aula"><div class="info"><h4>Planos de Aula</h4><span class="qtd">168 planos</span><span class="valor">R$ 7,00</span><a class="btn secundario" href="#" data-checkout="planos">Comprar</a></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- 6. BÔNUS -->
-<section class="suave">
-  <div class="container">
-    <h2 class="titulo">No Kit Completo você ainda leva <mark>6 bônus</mark></h2>
-    <p class="sub">Materiais extras para organizar a rotina e celebrar cada conquista.</p>
-    <div class="bonus-grid">
-      <div class="bonus"><img src="img/bonus-1.webp" alt="Rotina visual para imprimir"><div class="conteudo"><h4>Rotina visual</h4><p>Cartões para organizar o dia da criança.</p><span class="gratis">🎁 Grátis</span></div></div>
-      <div class="bonus"><img src="img/bonus-2.webp" alt="Cartões de emoções"><div class="conteudo"><h4>Cartões de emoções</h4><p>Para nomear o que sente.</p><span class="gratis">🎁 Grátis</span></div></div>
-      <div class="bonus"><img src="img/bonus-3.webp" alt="Quadro de recompensas"><div class="conteudo"><h4>Quadro de recompensas</h4><p>Estrelas para celebrar cada conquista.</p><span class="gratis">🎁 Grátis</span></div></div>
-      <div class="bonus"><img src="img/bonus-4.webp" alt="Calendário 30 dias de atividades"><div class="conteudo"><h4>Calendário 30 dias</h4><p>Uma atividade sugerida para cada dia.</p><span class="gratis">🎁 Grátis</span></div></div>
-      <div class="bonus"><img src="img/bonus-5.webp" alt="Certificados de conquista"><div class="conteudo"><h4>Certificados</h4><p>Para imprimir e comemorar.</p><span class="gratis">🎁 Grátis</span></div></div>
-      <div class="bonus"><img src="img/bonus-6.webp" alt="Guia rápido: como aplicar"><div class="conteudo"><h4>Guia rápido</h4><p>Como aplicar as atividades no dia a dia.</p><span class="gratis">🎁 Grátis</span></div></div>
-    </div>
-    <div class="cta">
-      <a class="btn" href="#" data-checkout="completo">Quero o Kit Completo por R$ 27,90</a>
-      <p class="nota">⚡ Acesso imediato · 🛡️ Garantia de 7 dias</p>
     </div>
   </div>
 </section>
@@ -405,7 +398,10 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
 </main>
 
 <footer>
-  <div class="container">© <span id="ano"></span> Mundo Autista. Todos os direitos reservados.<br>Imagens ilustrativas.</div>
+  <div class="container">
+    <p class="legais" id="legais"></p>
+    © <span id="ano"></span> Mundo Autista. Todos os direitos reservados.<br>Imagens ilustrativas.
+  </div>
 </footer>
 
 <div class="barra" id="barra">
@@ -414,7 +410,8 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
 </div>
 
 <script>
-// Links de checkout: preencha com os links reais de cada produto.
+// ===== CONFIGURAÇÃO =====================================================
+// Links de checkout de cada produto.
 var CHECKOUT = {
   completo:  '',
   atencao:   '',
@@ -422,10 +419,37 @@ var CHECKOUT = {
   sensorial: '',
   planos:    ''
 };
+// ID do Pixel da Meta (Gerenciador de Eventos). Vazio = pixel desligado.
+var PIXEL_ID = '';
+// Links do rodapé (a Meta exige política de privacidade em páginas de anúncio).
+var LEGAIS = { 'Política de privacidade': '', 'Termos de uso': '', 'Contato': '' };
+// ==========================================================================
+
+// Pixel da Meta: PageView ao abrir, ViewContent ao ver a oferta, InitiateCheckout no clique
+if (PIXEL_ID) {
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', PIXEL_ID);
+  fbq('track', 'PageView');
+}
+function rastreia(evento, dados) { if (window.fbq) fbq('track', evento, dados); }
+
+// Botões de compra: link real + UTMs do anúncio repassadas ao checkout (atribuição de venda)
+var VALORES = { completo: 27.90, atencao: 9.90, emocional: 7.00, sensorial: 7.00, planos: 7.00 };
 document.querySelectorAll('[data-checkout]').forEach(function (a) {
-  var url = CHECKOUT[a.dataset.checkout];
-  if (url) { a.href = url; a.rel = 'noopener'; }
-  else a.href = '#oferta';
+  var chave = a.dataset.checkout, url = CHECKOUT[chave];
+  if (!url) { a.href = '#oferta'; return; }
+  if (location.search) url += (url.indexOf('?') < 0 ? '?' : '&') + location.search.slice(1);
+  a.href = url; a.rel = 'noopener';
+  a.addEventListener('click', function () {
+    rastreia('InitiateCheckout', { content_name: chave, value: VALORES[chave], currency: 'BRL' });
+  });
+});
+
+// Rodapé legal: só mostra os links preenchidos
+var legais = document.getElementById('legais');
+Object.keys(LEGAIS).forEach(function (nome) {
+  if (!LEGAIS[nome]) return;
+  var a = document.createElement('a'); a.href = LEGAIS[nome]; a.textContent = nome; legais.appendChild(a);
 });
 
 document.getElementById('ano').textContent = new Date().getFullYear();
@@ -492,7 +516,11 @@ document.querySelectorAll('.video').forEach(function (box) {
   var heroVisivel = true, ofertaVisivel = false;
   function atualiza() { barra.classList.toggle('on', !heroVisivel && !ofertaVisivel); }
   new IntersectionObserver(function (e) { heroVisivel = e[0].isIntersecting; atualiza(); }).observe(hero);
-  new IntersectionObserver(function (e) { ofertaVisivel = e[0].isIntersecting; atualiza(); }).observe(oferta);
+  var viu = false;
+  new IntersectionObserver(function (e) {
+    ofertaVisivel = e[0].isIntersecting; atualiza();
+    if (ofertaVisivel && !viu) { viu = true; rastreia('ViewContent', { content_name: 'oferta', currency: 'BRL', value: 27.90 }); }
+  }).observe(oferta);
 })();
 </script>
 </body>
