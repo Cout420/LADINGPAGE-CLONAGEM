@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Boletim Pet — Documentos para Pet Shop</title>
+<meta name="description" content="Documente com segurança. Transmita autoridade. Modelos de documentos prontos para pet shops e banho & tosa.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* Cor: primária */
+  --color-primary:      #AD6EC3;
+  --color-primary-dark: #6B3F82;
+  --color-primary-50:   #F6EFFA;
+  --color-primary-100:  #F0E4F7;
+  --color-primary-200:  #EEE3F5;
+  --color-primary-300:  #C9B9D4;
+  --color-primary-400:  #B79FC4;
+
+  /* Cor: semântica */
+  --background:     #FFFFFF;
+  --background-alt: var(--color-primary-50);
+  --surface:        #FFFFFF;
+  --border:         var(--color-primary-200);
+  --text:           #2E1F38;
+  --text-muted:     #6B5C77;
+
+  --gradient-offer: linear-gradient(160deg, var(--color-primary-dark), var(--color-primary));
+
+  /* Tipografia */
+  --font-sans: Inter, 'Segoe UI', -apple-system, sans-serif;
+  --tracking-tight: -0.02em;
+  --tracking-label: 0.04em;
+  --tracking-eyebrow: 0.08em;
+
+  /* Layout */
+  --container-max: 1080px;
+  --container-pad: 24px;
+
+  /* Raio / elevação */
+  --radius-card:  18px;
+  --radius-offer: 24px;
+  --radius-pill:  999px;
+  --shadow-soft:  0 10px 30px rgba(107, 63, 130, 0.12);
+  --shadow-toast: 0 12px 32px rgba(107, 63, 130, 0.22);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font-sans);
+  color: var(--text);
+  background: var(--background);
+  line-height: 1.6;
+}
+img { max-width: 100%; }
+h1, h2, h3, h4 { font-weight: 800; letter-spacing: var(--tracking-tight); line-height: 1.2; }
+
+.container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--container-pad); }
+section { padding: 72px 0; }
+.section-suave { background: var(--background-alt); }
+
+h2 { text-align: center; font-size: 2rem; color: var(--color-primary-dark); margin-bottom: 12px; }
+.eyebrow {
+  text-align: center; font-size: 0.8rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: var(--tracking-eyebrow); color: var(--color-primary-dark); margin-bottom: 8px;
+}
+.subtitulo { text-align: center; color: var(--text-muted); max-width: 700px; margin: 0 auto; }
+
+/* Placeholder de imagem (troque por <img> reais) */
+.ph {
+  display: flex; align-items: center; justify-content: center; text-align: center;
+  background: linear-gradient(160deg, var(--color-primary-100), var(--color-primary-50));
+  color: var(--color-primary-dark); font-weight: 700; font-size: 0.85rem;
+  border: 1px solid var(--border);
+}
+
+/* Hero */
+.hero { padding: 32px 0 60px; text-align: center; }
+.logo-topo {
+  display: block; margin: 0 auto 12px; font-weight: 900; font-size: 0.85rem;
+  letter-spacing: var(--tracking-eyebrow); text-transform: uppercase;
+  color: var(--color-primary-dark); opacity: 0.85;
+}
+.hero h1 { font-size: 2.6rem; max-width: 720px; margin: 0 auto 18px; }
+.hero h1 span { color: var(--color-primary); }
+.hero p { font-size: 1.15rem; color: var(--text-muted); max-width: 560px; margin: 0 auto 32px; }
+.hero .mockup {
+  max-width: 420px; aspect-ratio: 4 / 3; margin: 40px auto 0;
+  border-radius: var(--radius-card); box-shadow: var(--shadow-soft);
+}
+
+/* Botões */
+.btn {
+  display: inline-block; background: var(--color-primary); color: #fff;
+  font-weight: 700; font-size: 1rem; padding: 16px 36px;
+  border-radius: var(--radius-pill); text-decoration: none;
+  box-shadow: var(--shadow-soft); transition: transform .15s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-wrap { text-align: center; margin-top: 28px; }
+.oferta-box .btn { background: #fff; color: var(--color-primary-dark); }
+
+.problema { max-width: 700px; margin: 0 auto; font-size: 1.05rem; color: var(--text-muted); text-align: center; }
+.problema p + p { margin-top: 14px; }
+
+/* Grids */
+.grid-3, .bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+.doc-categorias { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 40px; }
+.estilos-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 32px; }
+.depoimentos-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 32px; }
+
+/* Cards */
+.card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-card); padding: 32px 24px; text-align: center;
+  box-shadow: var(--shadow-soft);
+}
+.card .icone { width: 40px; height: 40px; margin: 0 auto 12px; color: var(--color-primary); }
+.card h3 { color: var(--color-primary-dark); font-size: 1.1rem; margin-bottom: 8px; }
+.card p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* Carrossel */
+.carrossel-wrap { position: relative; margin-top: 32px; }
+.carrossel {
+  display: flex; flex-wrap: nowrap; gap: 14px; overflow-x: auto;
+  scroll-behavior: smooth; scroll-snap-type: x mandatory; padding-bottom: 10px;
+  cursor: grab; user-select: none; scrollbar-width: none;
+}
+.carrossel::-webkit-scrollbar { display: none; }
+.carrossel.arrastando { cursor: grabbing; scroll-snap-type: none; scroll-behavior: auto; }
+.carrossel .item {
+  flex: 0 0 auto; width: 180px; aspect-ratio: 210 / 297;
+  scroll-snap-align: start; border-radius: 10px; box-shadow: var(--shadow-soft);
+  pointer-events: none;
+}
+.carrossel-seta {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 40px; height: 40px; border-radius: 50%;
+  background: #fff; border: 1px solid var(--border); box-shadow: var(--shadow-soft);
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; color: var(--color-primary-dark); z-index: 5; font-family: inherit;
+}
+.carrossel-seta.esquerda { left: -6px; }
+.carrossel-seta.direita { right: -6px; }
+.carrossel-dica {
+  text-align: center; font-size: 0.8rem; color: var(--color-primary-dark);
+  margin-top: 8px; letter-spacing: 0.02em;
+  animation: deslizar 1.8s ease-in-out infinite;
+}
+@keyframes deslizar {
+  0%, 100% { transform: translateX(0); opacity: 0.7; }
+  50% { transform: translateX(6px); opacity: 1; }
+}
+
+/* Estilos */
+.estilos-grid figure { text-align: center; }
+.estilos-grid .item { aspect-ratio: 210 / 297; border-radius: 12px; box-shadow: var(--shadow-soft); }
+.estilos-grid figcaption {
+  margin-top: 10px; font-weight: 700; color: var(--color-primary-dark);
+  letter-spacing: 0.05em; font-size: 0.85rem;
+}
+
+/* Listas com check */
+.doc-cat h3 {
+  color: var(--color-primary-dark); font-size: 0.95rem; text-transform: uppercase;
+  letter-spacing: var(--tracking-label); margin-bottom: 14px;
+  border-bottom: 2px solid var(--color-primary-100); padding-bottom: 8px;
+}
+.doc-cat ul, .membros ul, .oferta-lista { list-style: none; }
+.doc-cat li { padding: 6px 0; font-size: 0.92rem; color: var(--text-muted); }
+.doc-cat li::before, .membros li::before { content: "✓ "; color: var(--color-primary-dark); font-weight: 700; }
+.oferta-lista li::before { content: "✓ "; font-weight: 700; }
+
+/* Membros */
+.membros { display: flex; align-items: center; gap: 48px; }
+.membros .item { width: 45%; flex-shrink: 0; aspect-ratio: 4 / 3; border-radius: var(--radius-card); box-shadow: var(--shadow-soft); }
+.membros h2 { text-align: left; }
+.membros p { color: var(--text-muted); margin-bottom: 16px; }
+.membros li { padding: 5px 0; color: var(--text-muted); }
+
+/* Depoimentos */
+.depoimentos-grid .item { aspect-ratio: 9 / 16; border-radius: 12px; box-shadow: var(--shadow-soft); }
+
+/* Bônus */
+.bonus-card {
+  background: #fff; border-radius: var(--radius-card); overflow: hidden;
+  box-shadow: var(--shadow-soft); border: 1px solid var(--border);
+}
+.bonus-card .item { aspect-ratio: 16 / 10; border: 0; }
+.bonus-card .conteudo { padding: 18px 20px; }
+.bonus-card h4 { color: var(--color-primary-dark); font-size: 1rem; margin-bottom: 6px; }
+.bonus-card p { font-size: 0.88rem; color: var(--text-muted); margin-bottom: 10px; }
+.riscado { text-decoration: line-through; color: var(--color-primary-400); font-weight: 700; }
+.gratis { color: var(--color-primary-dark); font-weight: 800; margin-left: 6px; }
+
+/* Oferta */
+.oferta-box {
+  background: var(--gradient-offer); color: #fff; border-radius: var(--radius-offer);
+  padding: 48px; text-align: center; max-width: 640px; margin: 0 auto;
+}
+.oferta-box h3 { font-size: 1.3rem; margin-bottom: 20px; }
+.oferta-lista { text-align: left; max-width: 340px; margin: 0 auto 24px; }
+.oferta-lista li { padding: 5px 0; }
+.preco-de { text-decoration: line-through; opacity: 0.75; font-size: 1.1rem; }
+.preco-por { font-size: 3rem; font-weight: 900; letter-spacing: var(--tracking-tight); line-height: 1.2; margin: 6px 0 4px; }
+.preco-avista { font-size: 1rem; opacity: 0.9; margin-bottom: 20px; }
+
+/* Garantia */
+.garantia { text-align: center; max-width: 700px; margin: 0 auto; }
+.garantia .selo { width: 72px; height: 72px; margin: 0 auto 16px; color: var(--color-primary); }
+.garantia p { color: var(--text-muted); }
+
+/* FAQ */
+.faq { max-width: 700px; margin: 32px auto 0; }
+.faq details {
+  background: #fff; border: 1px solid var(--border); border-radius: 14px;
+  padding: 18px 22px; margin-bottom: 12px;
+}
+.faq summary { font-weight: 700; cursor: pointer; color: var(--text); }
+.faq p { margin-top: 10px; color: var(--text-muted); font-size: 0.95rem; }
+
+footer { padding: 40px 0; text-align: center; font-size: 0.85rem; color: var(--text-muted); }
+
+/* Toast — só exibido quando houver dados reais (ver script) */
+#notif-compra {
+  position: fixed; left: 20px; bottom: 20px; z-index: 999;
+  background: #fff; border-radius: 14px; box-shadow: var(--shadow-toast);
+  padding: 14px 28px 14px 18px; display: flex; align-items: center; gap: 12px;
+  max-width: 300px; border: 1px solid var(--border);
+  transform: translateY(120%); opacity: 0;
+  transition: transform .4s ease, opacity .4s ease;
+}
+#notif-compra.mostrar { transform: translateY(0); opacity: 1; }
+#notif-compra .avatar { width: 8px; border-radius: 6px; background: var(--color-primary); align-self: stretch; flex-shrink: 0; }
+#notif-compra .texto { font-size: 0.82rem; color: var(--text); line-height: 1.35; }
+#notif-compra .texto b { color: var(--color-primary-dark); }
+#notif-compra .tempo { color: var(--text-muted); font-size: 0.75rem; }
+#notif-compra .fechar {
+  position: absolute; top: 6px; right: 8px; background: none; border: 0;
+  cursor: pointer; color: var(--text-muted); font-size: 0.9rem; line-height: 1;
+}
+
+/* Acessibilidade */
+:where(a, button, summary, [tabindex]):focus-visible {
+  outline: 3px solid var(--color-primary-dark); outline-offset: 3px; border-radius: 4px;
+}
+.btn:focus-visible { border-radius: var(--radius-pill); }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important; scroll-behavior: auto !important;
+  }
+}
+
+/* Breakpoints */
+@media (max-width: 860px) {
+  .hero { padding: 20px 0 40px; }
+  .hero h1 { font-size: 1.9rem; }
+  .grid-3, .doc-categorias, .bonus-grid { grid-template-columns: 1fr; }
+  .estilos-grid, .depoimentos-grid { grid-template-columns: repeat(2, 1fr); }
+  .membros { flex-direction: column; }
+  .membros .item { width: 100%; }
+  .oferta-box { padding: 32px 20px; }
+}
+@media (max-width: 600px) {
+  .carrossel .item { width: 130px; }
+  .carrossel-seta { display: none; }
+}
+@media (max-width: 480px) {
+  #notif-compra { left: 12px; right: 12px; max-width: none; bottom: 12px; }
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></symbol>
+    <symbol id="i-print" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6"/><rect x="3" y="9" width="18" height="8" rx="2"/><path d="M7 14h10v7H7z"/></symbol>
+    <symbol id="i-palette" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.5-.8 1.5-1.5 0-1.2-1-1.5-1-2.5s.7-1.5 1.7-1.5H17a4 4 0 0 0 4-4c0-4.7-4-8.5-9-8.5z"/><circle cx="7.5" cy="11" r="1"/><circle cx="10" cy="7" r="1"/><circle cx="15" cy="7.5" r="1"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3l2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9z"/></symbol>
+    <symbol id="i-hand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l4-4 4 2 3-2 7 5-4 4"/><path d="M7 8l-4 4 6 6 2-1 2 2 2-1M11 10l3 3"/></symbol>
+  </defs>
+</svg>
+
+<main>
+<section class="hero">
+  <div class="container">
+    <span class="logo-topo">Boletim Pet</span>
+    <h1>Documente com segurança. <span>Transmita autoridade.</span></h1>
+    <p>Modelos de documentos prontos e editáveis para pet shops, banho &amp; tosa e clínicas — com cara profissional desde o primeiro atendimento.</p>
+    <a class="btn" href="#oferta">Quero meus documentos</a>
+    <div class="mockup ph" role="img" aria-label="Mockup do produto">Mockup do produto</div>
+  </div>
+</section>
+
+<section class="section-suave">
+  <div class="container">
+    <p class="eyebrow">O problema</p>
+    <h2>Seu atendimento é ótimo. Seus documentos dizem o contrário?</h2>
+    <div class="problema">
+      <p>Fichas improvisadas, termos escritos à mão e nenhum registro do estado do pet na chegada deixam seu negócio exposto a reclamações e passam uma imagem amadora.</p>
+      <p>Com documentos padronizados, você se protege, organiza a rotina e mostra ao tutor que o pet dele está em mãos profissionais.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow">Por que usar</p>
+    <h2>Tudo pronto para usar hoje</h2>
+    <div class="grid-3">
+      <div class="card"><svg class="icone"><use href="#i-doc"/></svg><h3>Modelos editáveis</h3><p>Personalize com sua logo, cores e dados em minutos.</p></div>
+      <div class="card"><svg class="icone"><use href="#i-print"/></svg><h3>Pronto para imprimir</h3><p>Arquivos em A4, prontos para impressão ou envio digital.</p></div>
+      <div class="card"><svg class="icone"><use href="#i-palette"/></svg><h3>4 estilos visuais</h3><p>Escolha a identidade que combina com o seu espaço.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-suave">
+  <div class="container">
+    <p class="eyebrow">Prévias</p>
+    <h2>Veja alguns dos documentos</h2>
+    <div class="carrossel-wrap">
+      <button class="carrossel-seta esquerda" type="button" aria-label="Anterior" data-dir="-1">‹</button>
+      <div class="carrossel" id="carrossel" tabindex="0" aria-label="Prévias dos documentos">
+        <div class="item ph">Ficha de cadastro</div>
+        <div class="item ph">Termo de banho</div>
+        <div class="item ph">Checklist de entrada</div>
+        <div class="item ph">Autorização de tosa</div>
+        <div class="item ph">Carteira de vacina</div>
+        <div class="item ph">Recibo</div>
+        <div class="item ph">Orçamento</div>
+        <div class="item ph">Termo de hospedagem</div>
+      </div>
+      <button class="carrossel-seta direita" type="button" aria-label="Próximo" data-dir="1">›</button>
+    </div>
+    <p class="carrossel-dica" aria-hidden="true">⟵ arraste ⟶</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow">Estilos</p>
+    <h2>Quatro identidades, um só pacote</h2>
+    <div class="estilos-grid">
+      <figure><div class="item ph">Luxo</div><figcaption>LUXO</figcaption></figure>
+      <figure><div class="item ph">Clean</div><figcaption>CLEAN</figcaption></figure>
+      <figure><div class="item ph">Lavanda</div><figcaption>LAVANDA</figcaption></figure>
+      <figure><div class="item ph">Nude</div><figcaption>NUDE</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="section-suave">
+  <div class="container">
+    <p class="eyebrow">Benefícios</p>
+    <h2>Mais que papel: proteção e autoridade</h2>
+    <div class="grid-3">
+      <div class="card"><svg class="icone"><use href="#i-shield"/></svg><h3>Segurança jurídica</h3><p>Registre autorizações e condições do pet antes do serviço.</p></div>
+      <div class="card"><svg class="icone"><use href="#i-star"/></svg><h3>Imagem profissional</h3><p>Documentos bonitos elevam a percepção de valor do seu serviço.</p></div>
+      <div class="card"><svg class="icone"><use href="#i-hand"/></svg><h3>Confiança do tutor</h3><p>Transparência que fideliza e gera indicações.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow">Conteúdo</p>
+    <h2>O que você recebe</h2>
+    <div class="doc-categorias">
+      <div class="doc-cat"><h3>Cadastro</h3><ul><li>Ficha do tutor</li><li>Ficha do pet</li><li>Histórico de atendimentos</li></ul></div>
+      <div class="doc-cat"><h3>Banho &amp; Tosa</h3><ul><li>Termo de responsabilidade</li><li>Checklist de entrada</li><li>Autorização de tosa</li></ul></div>
+      <div class="doc-cat"><h3>Saúde</h3><ul><li>Carteira de vacinação</li><li>Controle de vermífugo</li><li>Declaração de saúde</li></ul></div>
+      <div class="doc-cat"><h3>Hospedagem</h3><ul><li>Termo de hospedagem</li><li>Rotina alimentar</li><li>Relatório diário</li></ul></div>
+      <div class="doc-cat"><h3>Financeiro</h3><ul><li>Orçamento</li><li>Recibo</li><li>Pacotes mensais</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-suave">
+  <div class="container">
+    <div class="membros">
+      <div class="item ph" role="img" aria-label="Área de membros">Área de membros</div>
+      <div>
+        <p class="eyebrow" style="text-align:left">Acesso</p>
+        <h2>Área de membros organizada</h2>
+        <p>Acesse tudo em um só lugar, de qualquer dispositivo.</p>
+        <ul><li>Acesso imediato após a compra</li><li>Arquivos separados por categoria</li><li>Atualizações incluídas</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <p class="eyebrow">Depoimentos</p>
+    <h2>Quem usa, recomenda</h2>
+    <div class="depoimentos-grid">
+      <div class="item ph">Depoimento 1</div>
+      <div class="item ph">Depoimento 2</div>
+      <div class="item ph">Depoimento 3</div>
+      <div class="item ph">Depoimento 4</div>
+    </div>
+  </div>
+</section>
+
+<section class="section-suave">
+  <div class="container">
+    <p class="eyebrow">Bônus</p>
+    <h2>Leve também 6 bônus exclusivos</h2>
+    <div class="bonus-grid">
+      <div class="bonus-card"><div class="item ph">Bônus 1</div><div class="conteudo"><h4>Posts para Instagram</h4><p>Artes editáveis para divulgar seus serviços.</p><span class="riscado">R$ 47,00</span><span class="gratis">Grátis</span></div></div>
+      <div class="bonus-card"><div class="item ph">Bônus 2</div><div class="conteudo"><h4>Cartão fidelidade</h4><p>Modelos para incentivar o retorno do cliente.</p><span class="riscado">R$ 27,00</span><span class="gratis">Grátis</span></div></div>
+      <div class="bonus-card"><div class="item ph">Bônus 3</div><div class="conteudo"><h4>Tabela de preços</h4><p>Apresente seus serviços com clareza.</p><span class="riscado">R$ 27,00</span><span class="gratis">Grátis</span></div></div>
+      <div class="bonus-card"><div class="item ph">Bônus 4</div><div class="conteudo"><h4>Mensagens de WhatsApp</h4><p>Roteiros prontos para atendimento.</p><span class="riscado">R$ 37,00</span><span class="gratis">Grátis</span></div></div>
+      <div class="bonus-card"><div class="item ph">Bônus 5</div><div class="conteudo"><h4>Certificado de banho</h4><p>Um mimo que o tutor adora fotografar.</p><span class="riscado">R$ 19,00</span><span class="gratis">Grátis</span></div></div>
+      <div class="bonus-card"><div class="item ph">Bônus 6</div><div class="conteudo"><h4>Etiquetas e tags</h4><p>Identificação para pertences e hospedagem.</p><span class="riscado">R$ 19,00</span><span class="gratis">Grátis</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="oferta">
+  <div class="container">
+    <div class="oferta-box">
+      <h3>Pacote completo Boletim Pet</h3>
+      <ul class="oferta-lista">
+        <li>Todos os documentos editáveis</li>
+        <li>4 estilos visuais</li>
+        <li>6 bônus exclusivos</li>
+        <li>Acesso vitalício</li>
+      </ul>
+      <div class="preco-de">De R$ 497,00</div>
+      <div class="preco-por">12x de R$ 10,03</div>
+      <div class="preco-avista">ou R$ 97,00 à vista</div>
+      <a class="btn" href="https://pay.kiwify.com.br/tCrPHH1" rel="noopener">Quero garantir agora</a>
+    </div>
+  </div>
+</section>
+
+<section class="section-suave">
+  <div class="container garantia">
+    <svg class="selo" aria-hidden="true"><use href="#i-shield"/></svg>
+    <h2>Garantia de 7 dias</h2>
+    <p>Se não gostar, devolvemos 100% do seu dinheiro. Sem perguntas.</p>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <h2>Perguntas frequentes</h2>
+    <div class="faq">
+      <details><summary>Como recebo o material?</summary><p>O acesso é enviado para o seu e-mail logo após a confirmação do pagamento.</p></details>
+      <details><summary>Preciso de algum programa específico?</summary><p>Não. Os arquivos podem ser editados em ferramentas gratuitas e online.</p></details>
+      <details><summary>Posso colocar minha logo?</summary><p>Sim, todos os modelos são personalizáveis.</p></details>
+      <details><summary>O acesso expira?</summary><p>Não, o acesso é vitalício.</p></details>
+    </div>
+    <div class="btn-wrap"><a class="btn" href="#oferta">Quero meus documentos</a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">© <span id="ano"></span> Boletim Pet. Todos os direitos reservados.</div>
+</footer>
+
+<div id="notif-compra" role="status" aria-live="polite" hidden>
+  <div class="avatar"></div>
+  <div class="texto"></div>
+  <button class="fechar" type="button" aria-label="Fechar">✕</button>
+</div>
+
+<script>
+document.getElementById('ano').textContent = new Date().getFullYear();
+
+// Carrossel: roda do mouse → horizontal, arrastar, setas
+(function () {
+  var c = document.getElementById('carrossel');
+  c.addEventListener('wheel', function (e) {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      var max = c.scrollWidth - c.clientWidth;
+      if ((e.deltaY > 0 && c.scrollLeft < max) || (e.deltaY < 0 && c.scrollLeft > 0)) {
+        e.preventDefault();
+        c.scrollLeft += e.deltaY;
+      }
+    }
+  }, { passive: false });
+
+  var ativo = false, x0 = 0, s0 = 0;
+  c.addEventListener('mousedown', function (e) { ativo = true; x0 = e.pageX; s0 = c.scrollLeft; c.classList.add('arrastando'); });
+  window.addEventListener('mousemove', function (e) { if (ativo) c.scrollLeft = s0 - (e.pageX - x0); });
+  window.addEventListener('mouseup', function () { if (ativo) { ativo = false; c.classList.remove('arrastando'); } });
+
+  document.querySelectorAll('.carrossel-seta').forEach(function (b) {
+    b.addEventListener('click', function () { c.scrollBy({ left: 300 * +b.dataset.dir, behavior: 'smooth' }); });
+  });
+  c.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') c.scrollBy({ left: 200 });
+    if (e.key === 'ArrowLeft') c.scrollBy({ left: -200 });
+  });
+})();
+
+// Toast de compras: alimente com dados REAIS via window.BOLETIM_COMPRAS
+// (ex.: [{ nome: 'Ana R.', cidade: 'Campinas', quando: 'há 2 horas' }]).
+// Sem dados, o componente não aparece.
+(function () {
+  var compras = window.BOLETIM_COMPRAS;
+  if (!Array.isArray(compras) || !compras.length) return;
+  var el = document.getElementById('notif-compra'), txt = el.querySelector('.texto'), i = 0, t;
+  el.hidden = false;
+  function mostrar() {
+    var c = compras[i++ % compras.length];
+    txt.innerHTML = '';
+    var b = document.createElement('b'); b.textContent = c.nome;
+    txt.append(b, ' de ' + c.cidade + ' garantiu o Boletim Pet', document.createElement('br'));
+    var tempo = document.createElement('span'); tempo.className = 'tempo'; tempo.textContent = c.quando;
+    txt.append(tempo);
+    el.classList.add('mostrar');
+    clearTimeout(t); t = setTimeout(function () { el.classList.remove('mostrar'); }, 6000);
+  }
+  el.querySelector('.fechar').addEventListener('click', function () { el.classList.remove('mostrar'); });
+  setTimeout(mostrar, 5000);
+  setInterval(mostrar, 60000);
+})();
+</script>
+</body>
+</html>
