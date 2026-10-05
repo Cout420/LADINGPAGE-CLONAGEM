@@ -1,0 +1,441 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mundo Autista — Atividades prontas para imprimir</title>
+<meta name="description" content="Kits de atividades para crianças com autismo: atenção, emoções, sensorial e planos de aula. Baixe, imprima e use hoje. A partir de R$ 7.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root {
+  --azul:        #1E73BE;
+  --azul-escuro: #0F3D73;
+  --azul-50:     #EEF5FC;
+  --azul-100:    #DCEBF8;
+  --borda:       #D6E6F5;
+  --texto:       #14233A;
+  --texto-suave: #4F5F73;
+
+  /* Cores do criativo: preço e compra */
+  --vermelho:    #D62839;
+  --vermelho-esc:#B01E2E;
+  --amarelo:     #F4B400;
+  --verde:       #1F7A70;
+
+  --puzzle: linear-gradient(90deg, #E63946 0 25%, #F4B400 25% 50%, #2A9D8F 50% 75%, #1E73BE 75%);
+  --fonte: Inter, 'Segoe UI', -apple-system, sans-serif;
+  --raio: 18px;
+  --sombra: 0 10px 30px rgba(15, 61, 115, 0.12);
+  --secao: 64px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--fonte); color: var(--texto); background: #fff; line-height: 1.55; }
+body::before { content: ""; display: block; height: 6px; background: var(--puzzle); }
+img, video { max-width: 100%; display: block; }
+h1, h2, h3, h4 { font-weight: 800; letter-spacing: -0.02em; line-height: 1.2; }
+
+.container { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+section { padding: var(--secao) 0; }
+.suave { background: var(--azul-50); }
+.titulo { text-align: center; font-size: 2rem; color: var(--azul-escuro); margin-bottom: 10px; }
+.titulo mark { background: none; color: var(--vermelho); }
+.sub { text-align: center; color: var(--texto-suave); max-width: 620px; margin: 0 auto; }
+
+/* Botão de compra */
+.btn {
+  display: inline-block; background: var(--vermelho); color: #fff; text-decoration: none;
+  font-weight: 800; font-size: 1.05rem; padding: 17px 34px; border-radius: 999px;
+  box-shadow: 0 8px 22px rgba(214, 40, 57, 0.32); transition: transform .15s ease, background .15s ease;
+}
+.btn:hover { transform: translateY(-2px); background: var(--vermelho-esc); }
+.btn.bloco { display: block; text-align: center; width: 100%; }
+.btn.secundario { background: #fff; color: var(--azul-escuro); border: 2px solid var(--azul); box-shadow: none; padding: 13px 24px; font-size: 0.95rem; }
+.btn.secundario:hover { background: var(--azul-50); }
+.cta { text-align: center; margin-top: 32px; }
+.nota { margin-top: 10px; font-size: 0.85rem; color: var(--texto-suave); }
+
+/* Hero */
+.hero { padding: 28px 0 var(--secao); text-align: center; }
+.marca { font-weight: 900; font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--azul-escuro); margin-bottom: 14px; }
+.hero h1 { font-size: 2.6rem; max-width: 760px; margin: 0 auto 14px; }
+.hero h1 span { color: var(--azul); }
+.hero .sub { font-size: 1.12rem; margin-bottom: 24px; }
+.preco-hero { margin-top: 12px; font-size: 0.95rem; color: var(--texto-suave); }
+.preco-hero strong { color: var(--vermelho); }
+.hero .mockup { width: 100%; max-width: 720px; margin: 32px auto 0; border-radius: var(--raio); }
+
+/* Dor + vídeo */
+.dor { display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: center; max-width: 900px; margin: 0 auto; }
+.dor h2 { font-size: 1.9rem; color: var(--azul-escuro); margin-bottom: 14px; }
+.dor p { color: var(--texto-suave); margin-bottom: 12px; }
+.dor p strong { color: var(--texto); }
+
+.video { position: relative; border-radius: var(--raio); overflow: hidden; box-shadow: var(--sombra); background: #0F1B2D; }
+.video video { width: 100%; height: auto; }
+.video.vertical { aspect-ratio: 9 / 16; }
+.video.quadrado { aspect-ratio: 1 / 1; }
+.video video { width: 100%; height: 100%; object-fit: cover; }
+.som {
+  position: absolute; right: 10px; bottom: 10px; border: 0; cursor: pointer;
+  background: rgba(0,0,0,0.65); color: #fff; font: 700 0.8rem var(--fonte);
+  padding: 8px 12px; border-radius: 999px;
+}
+
+/* Carrossel */
+.carrossel-wrap { position: relative; margin-top: 28px; }
+.carrossel {
+  display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory;
+  padding: 4px 4px 12px; cursor: grab; user-select: none; scrollbar-width: none;
+}
+.carrossel::-webkit-scrollbar { display: none; }
+.carrossel.arrastando { cursor: grabbing; scroll-snap-type: none; }
+.carrossel img { flex: 0 0 auto; width: 190px; height: auto; scroll-snap-align: start; border-radius: 10px; box-shadow: var(--sombra); pointer-events: none; }
+.seta {
+  position: absolute; top: 50%; transform: translateY(-50%); z-index: 5;
+  width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--borda);
+  background: #fff; box-shadow: var(--sombra); cursor: pointer;
+  font-size: 1.2rem; color: var(--azul-escuro); font-family: inherit;
+}
+.seta.esq { left: -8px; } .seta.dir { right: -8px; }
+.dica { text-align: center; font-size: 0.82rem; color: var(--azul-escuro); margin-top: 6px; }
+
+/* Depoimentos */
+.depoimentos { columns: 3; column-gap: 16px; margin-top: 28px; }
+.depoimentos img { width: 100%; margin-bottom: 16px; break-inside: avoid; border-radius: 12px; border: 1px solid var(--borda); box-shadow: var(--sombra); }
+
+/* Oferta */
+.oferta { display: grid; grid-template-columns: 1fr 1.1fr; gap: 32px; align-items: start; margin-top: 32px; }
+.combo {
+  position: relative; background: #fff; border: 3px solid var(--vermelho); border-radius: 22px;
+  padding: 30px 26px 26px; box-shadow: 0 16px 40px rgba(214, 40, 57, 0.16);
+}
+.selo-top {
+  position: absolute; top: -15px; left: 50%; transform: translateX(-50%); white-space: nowrap;
+  background: var(--amarelo); color: var(--texto); font-weight: 900; font-size: 0.78rem;
+  letter-spacing: 0.06em; text-transform: uppercase; padding: 6px 14px; border-radius: 999px;
+}
+.combo h3 { font-size: 1.45rem; text-align: center; color: var(--azul-escuro); }
+.combo .resumo { text-align: center; color: var(--texto-suave); font-size: 0.92rem; margin: 4px 0 18px; }
+.lista { list-style: none; margin-bottom: 20px; }
+.lista li { padding: 7px 0; border-bottom: 1px dashed var(--borda); font-size: 0.95rem; display: flex; gap: 8px; }
+.lista li:last-child { border-bottom: 0; }
+.lista li::before { content: "✓"; color: var(--verde); font-weight: 900; }
+.lista li.extra::before { content: "🎁"; }
+.lista b { color: var(--azul-escuro); }
+.preco { text-align: center; margin-bottom: 18px; }
+.preco .de { color: var(--texto-suave); font-size: 0.95rem; }
+.preco .de s { color: var(--vermelho); }
+.preco .por { font-size: 3.2rem; font-weight: 900; color: var(--vermelho); letter-spacing: -0.03em; line-height: 1.05; }
+.preco .por small { font-size: 1.1rem; font-weight: 800; vertical-align: 0.9em; margin-right: 2px; }
+.preco .unico { font-size: 0.88rem; color: var(--texto-suave); }
+.confianca { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 14px; margin-top: 14px; font-size: 0.82rem; color: var(--texto-suave); }
+
+.garantia { display: flex; gap: 14px; align-items: center; margin-top: 18px; padding: 14px; background: var(--azul-50); border-radius: 14px; font-size: 0.86rem; color: var(--texto-suave); }
+.garantia strong { color: var(--texto); }
+.selo-7 {
+  flex-shrink: 0; width: 60px; height: 60px; border-radius: 50%; background: var(--amarelo); color: var(--texto);
+  display: flex; flex-direction: column; align-items: center; justify-content: center; line-height: 1;
+  border: 3px dashed #fff; box-shadow: 0 0 0 2px var(--amarelo);
+}
+.selo-7 strong { font-size: 1.4rem; font-weight: 900; }
+.selo-7 span { font-size: 0.62rem; font-weight: 800; text-transform: uppercase; }
+
+.avulsos-titulo { font-size: 1rem; text-align: center; color: var(--texto-suave); margin: 40px 0 16px; font-weight: 700; }
+.avulsos { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.kit { background: #fff; border: 1px solid var(--borda); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; }
+.kit img { width: 100%; aspect-ratio: 300 / 338; object-fit: cover; }
+.kit .info { padding: 12px 14px 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+.kit h4 { font-size: 0.95rem; color: var(--azul-escuro); }
+.kit .qtd { font-size: 0.82rem; color: var(--texto-suave); }
+.kit .valor { font-weight: 900; font-size: 1.25rem; color: var(--texto); margin-top: auto; }
+
+/* Bônus */
+.bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 28px; }
+.bonus { background: #fff; border-radius: 14px; overflow: hidden; border: 1px solid var(--borda); box-shadow: var(--sombra); }
+.bonus .conteudo { padding: 12px 14px 14px; }
+.bonus h4 { font-size: 0.95rem; color: var(--azul-escuro); margin-bottom: 4px; }
+.bonus p { font-size: 0.85rem; color: var(--texto-suave); margin-bottom: 8px; }
+.bonus .gratis { display: inline-block; background: var(--verde); color: #fff; font-weight: 800; font-size: 0.75rem; padding: 4px 10px; border-radius: 999px; }
+
+/* FAQ */
+.faq { max-width: 700px; margin: 28px auto 0; }
+.faq details { background: #fff; border: 1px solid var(--borda); border-radius: 14px; padding: 16px 20px; margin-bottom: 10px; }
+.faq summary { font-weight: 700; cursor: pointer; }
+.faq p { margin-top: 8px; color: var(--texto-suave); font-size: 0.95rem; }
+
+footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: var(--texto-suave); }
+
+/* Barra fixa de compra (celular) */
+.barra {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 50; display: none;
+  background: #fff; border-top: 1px solid var(--borda); box-shadow: 0 -6px 20px rgba(15,61,115,0.12);
+  padding: 10px 16px; align-items: center; gap: 12px; transform: translateY(110%); transition: transform .3s ease;
+}
+.barra.on { transform: translateY(0); }
+.barra .txt { font-size: 0.8rem; line-height: 1.25; color: var(--texto-suave); }
+.barra .txt strong { display: block; font-size: 1.1rem; color: var(--vermelho); }
+.barra .btn { padding: 12px 20px; font-size: 0.95rem; margin-left: auto; white-space: nowrap; }
+
+/* Acessibilidade */
+:where(a, button, summary, [tabindex]):focus-visible { outline: 3px solid var(--azul-escuro); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+}
+
+/* Responsivo */
+@media (max-width: 860px) {
+  :root { --secao: 44px; }
+  .hero h1 { font-size: 1.85rem; }
+  .hero .sub { font-size: 1rem; }
+  .titulo, .dor h2 { font-size: 1.55rem; }
+  .dor { grid-template-columns: 1fr; gap: 24px; text-align: center; }
+  .dor .video { max-width: 280px; margin: 0 auto; }
+  .oferta { grid-template-columns: 1fr; }
+  .combo { order: -1; }
+  .oferta .video { max-width: 420px; margin: 0 auto; width: 100%; }
+  .avulsos { grid-template-columns: repeat(2, 1fr); }
+  .bonus-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .depoimentos { columns: auto; display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+  .depoimentos img { flex: 0 0 80%; width: 80%; margin: 0; scroll-snap-align: center; align-self: flex-start; }
+  .barra { display: flex; }
+}
+@media (max-width: 600px) {
+  .carrossel img { width: 150px; }
+  .seta { display: none; }
+  .combo { padding: 28px 18px 20px; }
+  .preco .por { font-size: 2.8rem; }
+  .bonus p { display: none; }
+}
+</style>
+</head>
+<body>
+
+<main>
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="container">
+    <p class="marca">Mundo Autista</p>
+    <h1>Atividades prontas para imprimir. <span>Mais tempo com a criança.</span></h1>
+    <p class="sub">Kits de atividades para crianças com autismo — atenção, emoções, sensorial e planos de aula. Baixe, imprima e use hoje.</p>
+    <a class="btn" href="#oferta">Quero ver os kits</a>
+    <p class="preco-hero">Kits a partir de <strong>R$ 7</strong> · Kit completo por <strong>R$ 27,90</strong></p>
+    <img class="mockup" src="img/hero.webp" alt="Folhas de atividades do Mundo Autista" width="940" height="625">
+  </div>
+</section>
+
+<!-- 2. DOR -->
+<section class="suave">
+  <div class="container dor">
+    <div class="video vertical">
+      <video src="video/dor.mp4" poster="img/poster-dor.webp" muted loop playsinline autoplay preload="metadata"></video>
+      <button class="som" type="button">🔇 Ativar som</button>
+    </div>
+    <div>
+      <h2>23h. A criança dormiu. E você ainda está procurando atividade.</h2>
+      <p>PDF que não abre, site cheio de anúncio, material que não serve para ela. No dia seguinte, ela olha, se frustra e larga em dois minutos.</p>
+      <p>Não é falta de esforço seu. É falta de material feito para ela: <strong>visual, curto e previsível.</strong></p>
+      <p><strong>Com o Mundo Autista, você escolhe, imprime e aplica em 5 minutos.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- 3. PRÉVIAS -->
+<section>
+  <div class="container">
+    <h2 class="titulo">Veja o que você vai imprimir</h2>
+    <p class="sub">Folhas reais dos kits. Uma instrução por página, imagens grandes, cores que guiam o olhar.</p>
+    <div class="carrossel-wrap">
+      <button class="seta esq" type="button" aria-label="Anterior" data-dir="-1">‹</button>
+      <div class="carrossel" id="carrossel" tabindex="0" aria-label="Prévias das atividades">
+        <img src="img/previa-1.webp" alt="Ligue à sombra">
+        <img src="img/previa-3.webp" alt="Termômetro das emoções">
+        <img src="img/previa-10.webp" alt="Labirinto">
+        <img src="img/previa-2.webp" alt="Conte e pinte">
+        <img src="img/previa-6.webp" alt="Como estou me sentindo">
+        <img src="img/previa-4.webp" alt="Toque e descubra">
+        <img src="img/previa-11.webp" alt="Letra A">
+        <img src="img/previa-7.webp" alt="Roda da calma">
+        <img src="img/previa-12.webp" alt="Ligue a vogal">
+        <img src="img/previa-8.webp" alt="Que som é esse">
+        <img src="img/previa-9.webp" alt="Complete o padrão">
+        <img src="img/previa-5.webp" alt="Plano de aula">
+      </div>
+      <button class="seta dir" type="button" aria-label="Próximo" data-dir="1">›</button>
+    </div>
+    <p class="dica" aria-hidden="true">⟵ arraste para ver mais ⟶</p>
+  </div>
+</section>
+
+<!-- 4. OFERTA -->
+<section class="suave" id="oferta">
+  <div class="container">
+    <h2 class="titulo">Escolha seu kit</h2>
+    <p class="sub">Pagamento único. Acesso imediato no seu e-mail.</p>
+
+    <div class="oferta">
+      <div class="video quadrado">
+        <video src="video/kits.mp4" poster="img/poster-kits.webp" muted loop playsinline autoplay preload="metadata"></video>
+        <button class="som" type="button">🔇 Ativar som</button>
+      </div>
+
+      <div class="combo">
+        <span class="selo-top">⭐ Mais escolhido</span>
+        <h3>Kit Completo</h3>
+        <p class="resumo">Os 4 kits + 6 bônus exclusivos</p>
+        <ul class="lista">
+          <li><span><b>Atenção e Aprendizado</b> · +3.000 atividades</span></li>
+          <li><span><b>Controle Emocional</b> · +4.000 atividades</span></li>
+          <li><span><b>Sensorial</b> · +1.200 atividades</span></li>
+          <li><span><b>Planos de Aula</b> · 168 planos adaptados</span></li>
+          <li class="extra"><span><b>6 bônus</b> · só no Kit Completo</span></li>
+        </ul>
+        <div class="preco">
+          <div class="por"><small>R$</small>27,90</div>
+          <div class="unico">pagamento único · sem mensalidade</div>
+        </div>
+        <a class="btn bloco" href="#" data-checkout="completo">Quero o Kit Completo</a>
+        <div class="confianca"><span>⚡ Acesso imediato</span><span>🔒 Pagamento seguro</span><span>📱 Celular, tablet ou PC</span></div>
+        <div class="garantia">
+          <div class="selo-7"><strong>7</strong><span>dias</span></div>
+          <p><strong>Garantia de 7 dias.</strong> Baixe, imprima e use. Se não gostar, devolvemos 100% do valor, sem perguntas.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="avulsos-titulo">Prefere um kit só? A partir de R$ 7:</p>
+    <div class="avulsos">
+      <div class="kit"><img src="img/kit-1.webp" alt="Kit +3.000 Atividades"><div class="info"><h4>Atenção e Aprendizado</h4><span class="qtd">+3.000 atividades</span><span class="valor">R$ 9,90</span><a class="btn secundario" href="#" data-checkout="atencao">Comprar</a></div></div>
+      <div class="kit"><img src="img/kit-2.webp" alt="Kit Controle Emocional"><div class="info"><h4>Controle Emocional</h4><span class="qtd">+4.000 atividades</span><span class="valor">R$ 7,00</span><a class="btn secundario" href="#" data-checkout="emocional">Comprar</a></div></div>
+      <div class="kit"><img src="img/kit-3.webp" alt="Kit Sensorial"><div class="info"><h4>Sensorial</h4><span class="qtd">+1.200 atividades</span><span class="valor">R$ 7,00</span><a class="btn secundario" href="#" data-checkout="sensorial">Comprar</a></div></div>
+      <div class="kit"><img src="img/kit-4.webp" alt="Kit Planos de Aula"><div class="info"><h4>Planos de Aula</h4><span class="qtd">168 planos</span><span class="valor">R$ 7,00</span><a class="btn secundario" href="#" data-checkout="planos">Comprar</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. BÔNUS -->
+<section>
+  <div class="container">
+    <h2 class="titulo">No Kit Completo você ainda leva <mark>6 bônus</mark></h2>
+    <p class="sub">Materiais extras para organizar a rotina e celebrar cada conquista.</p>
+    <div class="bonus-grid">
+      <div class="bonus"><img src="img/bonus-1.webp" alt="Rotina visual para imprimir"><div class="conteudo"><h4>Rotina visual</h4><p>Cartões para organizar o dia da criança.</p><span class="gratis">🎁 Grátis</span></div></div>
+      <div class="bonus"><img src="img/bonus-2.webp" alt="Cartões de emoções"><div class="conteudo"><h4>Cartões de emoções</h4><p>Para nomear o que sente.</p><span class="gratis">🎁 Grátis</span></div></div>
+      <div class="bonus"><img src="img/bonus-3.webp" alt="Quadro de recompensas"><div class="conteudo"><h4>Quadro de recompensas</h4><p>Estrelas para celebrar cada conquista.</p><span class="gratis">🎁 Grátis</span></div></div>
+      <div class="bonus"><img src="img/bonus-4.webp" alt="Calendário 30 dias de atividades"><div class="conteudo"><h4>Calendário 30 dias</h4><p>Uma atividade sugerida para cada dia.</p><span class="gratis">🎁 Grátis</span></div></div>
+      <div class="bonus"><img src="img/bonus-5.webp" alt="Certificados de conquista"><div class="conteudo"><h4>Certificados</h4><p>Para imprimir e comemorar.</p><span class="gratis">🎁 Grátis</span></div></div>
+      <div class="bonus"><img src="img/bonus-6.webp" alt="Guia rápido: como aplicar"><div class="conteudo"><h4>Guia rápido</h4><p>Como aplicar as atividades no dia a dia.</p><span class="gratis">🎁 Grátis</span></div></div>
+    </div>
+    <div class="cta">
+      <a class="btn" href="#" data-checkout="completo">Quero o Kit Completo por R$ 27,90</a>
+      <p class="nota">⚡ Acesso imediato · 🛡️ Garantia de 7 dias</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6. PROVA SOCIAL -->
+<section class="suave">
+  <div class="container">
+    <h2 class="titulo">Quem já é nosso cliente, confia</h2>
+    <p class="sub">Conversas reais, publicadas com autorização, de clientes dos nossos materiais.</p>
+    <div class="depoimentos">
+      <img src="img/depoimento-1.webp" alt="Cliente elogiando os bônus, o conteúdo e a estrutura">
+      <img src="img/depoimento-3.webp" alt="Cliente que indicou para uma colega">
+      <img src="img/depoimento-2.webp" alt="Cliente acessando a área de membros e elogiando o atendimento">
+      <img src="img/depoimento-5.webp" alt="Cliente que já acompanha e comprou outro material">
+      <img src="img/depoimento-4.webp" alt="Cliente agradecendo um material extra">
+    </div>
+  </div>
+</section>
+
+<!-- 7. FAQ -->
+<section>
+  <div class="container">
+    <h2 class="titulo">Perguntas frequentes</h2>
+    <div class="faq">
+      <details><summary>Como recebo o material?</summary><p>Logo após o pagamento, o acesso chega no seu e-mail. Em minutos você já pode baixar e imprimir.</p></details>
+      <details><summary>É assinatura? Vou pagar todo mês?</summary><p>Não. É pagamento único, sem mensalidade. O acesso é seu.</p></details>
+      <details><summary>Para qual idade servem as atividades?</summary><p>Para a educação infantil e os primeiros anos, e podem ser adaptadas ao nível de cada criança.</p></details>
+      <details><summary>Serve para professores e terapeutas?</summary><p>Sim. Dá para usar em casa, na sala de aula ou no consultório.</p></details>
+      <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia. Basta pedir e devolvemos 100% do valor.</p></details>
+    </div>
+    <div class="cta">
+      <a class="btn" href="#oferta">Escolher meu kit</a>
+      <p class="nota">Kit completo por R$ 27,90 · ou a partir de R$ 7</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">© <span id="ano"></span> Mundo Autista. Todos os direitos reservados.<br>Imagens ilustrativas.</div>
+</footer>
+
+<div class="barra" id="barra">
+  <div class="txt">Kit Completo<strong>R$ 27,90</strong></div>
+  <a class="btn" href="#oferta">Escolher kit</a>
+</div>
+
+<script>
+// Links de checkout: preencha com os links reais de cada produto.
+var CHECKOUT = {
+  completo:  '',
+  atencao:   '',
+  emocional: '',
+  sensorial: '',
+  planos:    ''
+};
+document.querySelectorAll('[data-checkout]').forEach(function (a) {
+  var url = CHECKOUT[a.dataset.checkout];
+  if (url) { a.href = url; a.rel = 'noopener'; }
+  else a.href = '#oferta';
+});
+
+document.getElementById('ano').textContent = new Date().getFullYear();
+
+// Vídeos: botão de som
+document.querySelectorAll('.video').forEach(function (box) {
+  var v = box.querySelector('video'), b = box.querySelector('.som');
+  b.addEventListener('click', function () {
+    v.muted = !v.muted;
+    if (!v.muted) { v.currentTime = 0; v.play(); }
+    b.textContent = v.muted ? '🔇 Ativar som' : '🔊 Som ligado';
+  });
+});
+
+// Carrossel: roda do mouse, arrastar, setas, teclado
+(function () {
+  var c = document.getElementById('carrossel');
+  c.addEventListener('wheel', function (e) {
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      var max = c.scrollWidth - c.clientWidth;
+      if ((e.deltaY > 0 && c.scrollLeft < max) || (e.deltaY < 0 && c.scrollLeft > 0)) { e.preventDefault(); c.scrollLeft += e.deltaY; }
+    }
+  }, { passive: false });
+  var ativo = false, x0 = 0, s0 = 0;
+  c.addEventListener('mousedown', function (e) { ativo = true; x0 = e.pageX; s0 = c.scrollLeft; c.classList.add('arrastando'); });
+  window.addEventListener('mousemove', function (e) { if (ativo) c.scrollLeft = s0 - (e.pageX - x0); });
+  window.addEventListener('mouseup', function () { if (ativo) { ativo = false; c.classList.remove('arrastando'); } });
+  document.querySelectorAll('.seta').forEach(function (b) {
+    b.addEventListener('click', function () { c.scrollBy({ left: 300 * +b.dataset.dir, behavior: 'smooth' }); });
+  });
+  c.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight') c.scrollBy({ left: 200 });
+    if (e.key === 'ArrowLeft') c.scrollBy({ left: -200 });
+  });
+})();
+
+// Barra fixa: aparece depois do topo e some quando a oferta está na tela
+(function () {
+  var barra = document.getElementById('barra'), hero = document.querySelector('.hero'), oferta = document.getElementById('oferta');
+  if (!('IntersectionObserver' in window)) return;
+  var heroVisivel = true, ofertaVisivel = false;
+  function atualiza() { barra.classList.toggle('on', !heroVisivel && !ofertaVisivel); }
+  new IntersectionObserver(function (e) { heroVisivel = e[0].isIntersecting; atualiza(); }).observe(hero);
+  new IntersectionObserver(function (e) { ofertaVisivel = e[0].isIntersecting; atualiza(); }).observe(oferta);
+})();
+</script>
+</body>
+</html>
