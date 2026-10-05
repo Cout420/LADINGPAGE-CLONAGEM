@@ -92,7 +92,7 @@ section { padding: var(--secao) 0; }
 }
 .carrossel::-webkit-scrollbar { display: none; }
 .carrossel.arrastando { cursor: grabbing; scroll-snap-type: none; }
-.carrossel img { flex: 0 0 auto; width: 190px; height: auto; scroll-snap-align: start; border-radius: 10px; box-shadow: var(--sombra); pointer-events: none; }
+.carrossel img { width: 190px; height: auto; border-radius: 10px; box-shadow: var(--sombra); pointer-events: none; }
 .seta {
   position: absolute; top: 50%; transform: translateY(-50%); z-index: 5;
   width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--borda);
@@ -101,6 +101,33 @@ section { padding: var(--secao) 0; }
 }
 .seta.esq { left: -8px; } .seta.dir { right: -8px; }
 .dica { text-align: center; font-size: 0.82rem; color: var(--azul-escuro); margin-top: 6px; }
+
+
+/* Amostra: números por kit + etiquetas nas folhas */
+.numeros { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 760px; margin: 24px auto 0; }
+.num { border-radius: 14px; padding: 12px 8px; text-align: center; color: #fff; }
+.num strong { display: block; font-size: 1.5rem; font-weight: 900; line-height: 1.1; }
+.num span { font-size: 0.78rem; font-weight: 600; opacity: 0.95; }
+.n-atencao, .t-atencao { background: #1E5FD0; }
+.n-emocional, .t-emocional { background: #0F9488; }
+.n-sensorial, .t-sensorial { background: #E2780B; }
+.n-planos, .t-planos { background: #7B3FC4; }
+.folha { flex: 0 0 auto; scroll-snap-align: start; align-self: flex-start; }
+.carrossel .folha img { width: 190px; aspect-ratio: 238 / 322; object-fit: cover; object-position: top; }
+.tag { display: table; margin: 10px auto 0; color: #fff; font-size: 0.72rem; font-weight: 800; padding: 3px 10px; border-radius: 999px; }
+.folha.mais {
+  width: 190px; border-radius: 10px; text-decoration: none; color: #fff; padding: 20px;
+  background: linear-gradient(160deg, var(--azul-escuro), var(--azul));
+  display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; gap: 6px; box-shadow: var(--sombra);
+}
+.folha.mais strong { font-size: 2.2rem; font-weight: 900; line-height: 1; }
+.folha.mais span { font-size: 0.9rem; }
+.folha.mais em { font-style: normal; font-weight: 800; margin-top: 10px; background: #fff; color: var(--azul-escuro); padding: 8px 14px; border-radius: 999px; font-size: 0.85rem; }
+.formato { text-align: center; margin-top: 14px; font-size: 0.88rem; color: var(--texto-suave); }
+@media (max-width: 600px) {
+  .numeros { grid-template-columns: repeat(2, 1fr); }
+  .carrossel .folha img, .folha.mais { width: 150px; }
+}
 
 /* Depoimentos */
 .depoimentos { columns: 3; column-gap: 16px; margin-top: 28px; }
@@ -203,7 +230,6 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
   .barra { display: flex; }
 }
 @media (max-width: 600px) {
-  .carrossel img { width: 150px; }
   .seta { display: none; }
   .combo { padding: 28px 18px 20px; }
   .preco .por { font-size: 2.8rem; }
@@ -245,27 +271,35 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
 <!-- 3. PRÉVIAS -->
 <section>
   <div class="container">
-    <h2 class="titulo">Veja o que você vai imprimir</h2>
-    <p class="sub">Folhas reais dos kits. Uma instrução por página, imagens grandes, cores que guiam o olhar.</p>
+    <h2 class="titulo">Uma amostra de <mark>+8.000 atividades</mark></h2>
+    <p class="sub">Estas são só algumas folhas. Nos 4 kits você recebe milhares de atividades como estas, separadas por tema.</p>
+    <div class="numeros">
+      <div class="num n-atencao"><strong>+3.000</strong><span>Atenção e Aprendizado</span></div>
+      <div class="num n-emocional"><strong>+4.000</strong><span>Controle Emocional</span></div>
+      <div class="num n-sensorial"><strong>+1.200</strong><span>Sensorial</span></div>
+      <div class="num n-planos"><strong>168</strong><span>Planos de Aula</span></div>
+    </div>
     <div class="carrossel-wrap">
       <button class="seta esq" type="button" aria-label="Anterior" data-dir="-1">‹</button>
       <div class="carrossel" id="carrossel" tabindex="0" aria-label="Prévias das atividades">
-        <img src="img/previa-1.webp" alt="Ligue à sombra">
-        <img src="img/previa-3.webp" alt="Termômetro das emoções">
-        <img src="img/previa-10.webp" alt="Labirinto">
-        <img src="img/previa-2.webp" alt="Conte e pinte">
-        <img src="img/previa-6.webp" alt="Como estou me sentindo">
-        <img src="img/previa-4.webp" alt="Toque e descubra">
-        <img src="img/previa-11.webp" alt="Letra A">
-        <img src="img/previa-7.webp" alt="Roda da calma">
-        <img src="img/previa-12.webp" alt="Ligue a vogal">
-        <img src="img/previa-8.webp" alt="Que som é esse">
-        <img src="img/previa-9.webp" alt="Complete o padrão">
-        <img src="img/previa-5.webp" alt="Plano de aula">
+        <figure class="folha"><img src="img/previa-1.webp" alt="Ligue à sombra"><figcaption class="tag t-atencao">Atenção</figcaption></figure>
+        <figure class="folha"><img src="img/previa-3.webp" alt="Termômetro das emoções"><figcaption class="tag t-emocional">Emocional</figcaption></figure>
+        <figure class="folha"><img src="img/previa-10.webp" alt="Labirinto"><figcaption class="tag t-atencao">Atenção</figcaption></figure>
+        <figure class="folha"><img src="img/previa-2.webp" alt="Conte e pinte"><figcaption class="tag t-atencao">Atenção</figcaption></figure>
+        <figure class="folha"><img src="img/previa-6.webp" alt="Como estou me sentindo"><figcaption class="tag t-emocional">Emocional</figcaption></figure>
+        <figure class="folha"><img src="img/previa-4.webp" alt="Toque e descubra"><figcaption class="tag t-sensorial">Sensorial</figcaption></figure>
+        <figure class="folha"><img src="img/previa-11.webp" alt="Letra A"><figcaption class="tag t-atencao">Atenção</figcaption></figure>
+        <figure class="folha"><img src="img/previa-7.webp" alt="Roda da calma"><figcaption class="tag t-emocional">Emocional</figcaption></figure>
+        <figure class="folha"><img src="img/previa-12.webp" alt="Ligue a vogal"><figcaption class="tag t-atencao">Atenção</figcaption></figure>
+        <figure class="folha"><img src="img/previa-8.webp" alt="Que som é esse"><figcaption class="tag t-sensorial">Sensorial</figcaption></figure>
+        <figure class="folha"><img src="img/previa-9.webp" alt="Complete o padrão"><figcaption class="tag t-atencao">Atenção</figcaption></figure>
+        <figure class="folha"><img src="img/previa-5.webp" alt="Plano de aula"><figcaption class="tag t-planos">Planos de Aula</figcaption></figure>
+        <a class="folha mais" href="#oferta" draggable="false"><strong>+8.000</strong><span>outras atividades nos 4 kits</span><em>Ver os kits →</em></a>
       </div>
       <button class="seta dir" type="button" aria-label="Próximo" data-dir="1">›</button>
     </div>
     <p class="dica" aria-hidden="true">⟵ arraste para ver mais ⟶</p>
+    <p class="formato">📄 PDF em A4 · imprima quantas vezes quiser · use em casa, na escola ou na terapia</p>
   </div>
 </section>
 
@@ -440,6 +474,8 @@ document.querySelectorAll('.video').forEach(function (box) {
   c.addEventListener('mousedown', function (e) { ativo = true; x0 = e.pageX; s0 = c.scrollLeft; c.classList.add('arrastando'); });
   window.addEventListener('mousemove', function (e) { if (ativo) c.scrollLeft = s0 - (e.pageX - x0); });
   window.addEventListener('mouseup', function () { if (ativo) { ativo = false; c.classList.remove('arrastando'); } });
+  // Não segue o link do último card se a pessoa estava arrastando
+  c.addEventListener('click', function (e) { if (Math.abs(c.scrollLeft - s0) > 5) e.preventDefault(); }, true);
   document.querySelectorAll('.seta').forEach(function (b) {
     b.addEventListener('click', function () { c.scrollBy({ left: 300 * +b.dataset.dir, behavior: 'smooth' }); });
   });
