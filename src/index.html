@@ -288,8 +288,12 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
   .seta { display: none; }
   .combo { padding: 28px 18px 20px; }
   .preco .por { font-size: 2.8rem; }
-  .bonus p { display: none; }
+  .bonus-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; margin: 24px -20px 0; padding: 0 20px 10px; scrollbar-width: none; }
+  .bonus-grid::-webkit-scrollbar { display: none; }
+  .bonus-grid .bonus { flex: 0 0 80%; scroll-snap-align: center; }
+  .so-movel { display: block !important; margin-top: 10px; }
 }
+.so-movel { display: none; }
 </style>
 </head>
 <body>
@@ -332,7 +336,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
       <div>
     <div class="numeros">
         <div class="num n-atencao"><strong>+3.000</strong><span>Atenção e Aprendizado</span></div>
-        <div class="num n-emocional"><strong>+4.000</strong><span>Controle Emocional</span></div>
+        <div class="num n-emocional"><strong>+4.000</strong><span>Controlo Emocional</span></div>
         <div class="num n-sensorial"><strong>+1.200</strong><span>Sensorial</span></div>
         <div class="num n-planos"><strong>168</strong><span>Planos de Aula</span></div>
       </div>
@@ -343,10 +347,10 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
       <button class="seta esq" type="button" aria-label="Anterior" data-dir="-1">‹</button>
       <div class="carrossel" id="carrossel" tabindex="0" aria-label="Prévias das atividades">
         <figure class="folha"><img src="img/previa-1.webp" alt="Ligue à sombra"><figcaption class="tag t-atencao">Atenção</figcaption></figure>
-        <figure class="folha"><img src="img/previa-3.webp" alt="Termômetro das emoções"><figcaption class="tag t-emocional">Emocional</figcaption></figure>
+        <figure class="folha"><img src="img/previa-3.webp" alt="Termómetro das emoções"><figcaption class="tag t-emocional">Emocional</figcaption></figure>
         <figure class="folha"><img src="img/previa-10.webp" alt="Labirinto"><figcaption class="tag t-atencao">Atenção</figcaption></figure>
         <figure class="folha"><img src="img/previa-2.webp" alt="Conte e pinte"><figcaption class="tag t-atencao">Atenção</figcaption></figure>
-        <figure class="folha"><img src="img/previa-6.webp" alt="Como estou me sentindo"><figcaption class="tag t-emocional">Emocional</figcaption></figure>
+        <figure class="folha"><img src="img/previa-6.webp" alt="Como me estou a sentir"><figcaption class="tag t-emocional">Emocional</figcaption></figure>
         <figure class="folha"><img src="img/previa-4.webp" alt="Toque e descubra"><figcaption class="tag t-sensorial">Sensorial</figcaption></figure>
         <figure class="folha"><img src="img/previa-11.webp" alt="Letra A"><figcaption class="tag t-atencao">Atenção</figcaption></figure>
         <figure class="folha"><img src="img/previa-7.webp" alt="Roda da calma"><figcaption class="tag t-emocional">Emocional</figcaption></figure>
@@ -369,6 +373,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
   <div class="container">
     <h2 class="titulo">No Kit Completo ainda leva <mark>6 bónus</mark></h2>
     <p class="sub">Materiais extras para organizar a rotina e celebrar cada conquista.</p>
+    <p class="dica so-movel" aria-hidden="true">⟵ deslize para ver os 6 ⟶</p>
     <div class="bonus-grid">
       <a class="bonus" href="#oferta"><img src="img/bonus-1.webp" alt="Rotina visual para imprimir"><div class="conteudo"><h4>Rotina visual</h4><p>Cartões para organizar o dia da criança.</p><span class="gratis">🎁 Grátis</span></div></a>
       <a class="bonus" href="#oferta"><img src="img/bonus-2.webp" alt="Cartões de emoções"><div class="conteudo"><h4>Cartões de emoções</h4><p>Para nomear o que sente.</p><span class="gratis">🎁 Grátis</span></div></a>
@@ -419,7 +424,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
         <p class="resumo">Tudo do kit básico + 3 kits + 6 bónus</p>
         <ul class="lista">
           <li><span><b>Atenção e Aprendizado</b> · +3.000 atividades</span></li>
-          <li><span><b>Controle Emocional</b> · +4.000 atividades</span></li>
+          <li><span><b>Controlo Emocional</b> · +4.000 atividades</span></li>
           <li><span><b>Sensorial</b> · +1.200 atividades</span></li>
           <li><span><b>Planos de Aula</b> · 168 planos adaptados</span></li>
           <li class="extra"><span><b>6 bónus</b> · só no Kit Completo</span></li>
@@ -441,7 +446,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
         <p class="resumo">Para começar</p>
         <ul class="lista">
           <li><span><b>Atenção e Aprendizado</b> · +3.000 atividades</span></li>
-          <li class="nao"><span>Controle Emocional</span></li>
+          <li class="nao"><span>Controlo Emocional</span></li>
           <li class="nao"><span>Sensorial</span></li>
           <li class="nao"><span>Planos de Aula</span></li>
           <li class="nao"><span>6 bónus</span></li>

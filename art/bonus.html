@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-PT"><head><meta charset="utf-8">
+<link rel="stylesheet" href="fonts.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{width:1200px;height:900px;overflow:hidden;font-family:Nunito,sans-serif;color:#1d2b44}
+.cena{position:relative;width:1200px;height:900px;overflow:hidden;
+  background:radial-gradient(circle at 18% 20%,rgba(255,255,255,.75) 0 120px,transparent 121px),
+  radial-gradient(circle at 85% 82%,rgba(255,255,255,.55) 0 170px,transparent 171px),
+  linear-gradient(150deg,var(--c1),var(--c2));}
+.conf{position:absolute;border-radius:50%;opacity:.55}
+.folha{position:absolute;background:#fff;border-radius:22px;box-shadow:0 30px 60px rgba(20,35,58,.22),0 6px 14px rgba(20,35,58,.10);padding:34px 36px;}
+.folha::after{content:"";position:absolute;inset:14px;border:3px dashed var(--borda,#cfd9e6);border-radius:14px;pointer-events:none}
+.pill{display:inline-block;font-family:Fredoka;font-weight:600;color:#fff;background:var(--pill);padding:10px 30px;border-radius:999px;font-size:34px;box-shadow:0 4px 0 rgba(0,0,0,.12)}
+.cab{text-align:center}
+.inst{font-weight:700;color:#5b6b80;font-size:20px;margin-top:10px;text-align:center}
+.linha{display:flex;gap:18px;font-size:16px;color:#8a97a8;margin:14px 6px 0;font-weight:700}
+.linha span{flex:1;border-bottom:2px solid #d5dde8;padding-bottom:2px}
+.rodape{position:absolute;left:34px;bottom:26px;font-size:15px;font-weight:800;color:#8a97a8}
+.rodape b{color:#e04a5f}
+.tag{position:absolute;right:30px;bottom:22px;font-size:15px;font-weight:800;color:#fff;background:var(--pill);padding:3px 12px;border-radius:999px}
+.emo{font-size:64px;line-height:1}
+/* 1 rotina */
+.rot{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.rc{border:3px solid #e3e9f2;border-radius:16px;padding:22px 8px 18px;text-align:center;background:#fbfcfe}
+.rc b{display:block;font-family:Fredoka;font-weight:600;font-size:24px;margin-top:10px}
+.rc .emo{font-size:76px}
+.pd{display:flex;gap:16px;margin-top:20px}
+.pd div{flex:1;border-radius:16px;padding:18px 12px;text-align:center;font-family:Fredoka;font-weight:600;font-size:26px;color:#fff}
+.pd .emo{font-size:78px;margin-top:6px}
+/* 2 emoções */
+.cartao{position:absolute;width:300px;height:400px;background:#fff;border-radius:24px;box-shadow:0 26px 50px rgba(20,35,58,.22);border:10px solid var(--cor);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px}
+.cartao .emo{font-size:150px}
+.cartao b{font-family:Fredoka;font-weight:600;font-size:40px;color:var(--cor)}
+/* 3 quadro */
+.est{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:24px}
+.est div{height:118px;border-radius:16px;border:4px solid #f4c84a;background:#fff8dd;display:flex;align-items:center;justify-content:center;font-size:52px}
+.est div.v{background:#fff;border-color:#e6e9ef;border-style:dashed}
+.premio{margin-top:26px;display:flex;align-items:center;gap:16px;background:#eef6ff;border-radius:16px;padding:14px 20px;font-family:Fredoka;font-weight:600;font-size:26px}
+.premio span{flex:1;border-bottom:3px dotted #9db3cf;height:30px}
+/* 4 calendário */
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:9px;margin-top:20px}
+.cal div{border-radius:12px;background:#f6f8fb;border:2px solid #e3e9f2;height:94px;padding:6px 8px;position:relative}
+.cal div i{font-style:normal;font-weight:900;font-size:17px;color:#6c7a8f}
+.cal div em{position:absolute;right:8px;bottom:6px;font-style:normal;font-size:34px}
+.cal div.f{background:#e8f8ef;border-color:#9fdcb8}
+.cal div.f::after{content:"✓";position:absolute;left:8px;bottom:4px;font-weight:900;color:#1f9d5c;font-size:24px}
+/* 5 certificado */
+.cert{position:absolute;inset:auto;background:#fffdf7;border-radius:18px;box-shadow:0 30px 60px rgba(20,35,58,.25);padding:46px 60px;text-align:center;border:14px solid #f5c542;outline:3px solid #fff;outline-offset:-26px}
+.cert h3{font-family:Fredoka;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#7b3fc4;font-size:30px}
+.cert .par{font-family:Fredoka;font-weight:700;color:#e0334a;font-size:92px;line-height:1.05;margin-top:14px}
+.cert .nome{margin:26px auto 0;width:520px;border-bottom:3px solid #c9b77a;font-family:Fredoka;font-size:30px;color:#9a8b5a;padding-bottom:6px}
+.cert .por{font-weight:800;color:#5b6b80;font-size:24px;margin-top:16px}
+.cert .stars{font-size:54px;margin-top:16px;letter-spacing:10px}
+.medalha{position:absolute;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe9a3,#f2b51c 60%,#d99611);display:flex;align-items:center;justify-content:center;font-size:74px;box-shadow:0 10px 24px rgba(0,0,0,.2);border:6px solid #fff}
+.fita{position:absolute;width:46px;height:110px;background:#e0334a;clip-path:polygon(0 0,100% 0,100% 100%,50% 82%,0 100%)}
+/* 6 guia */
+.livro{position:absolute;width:390px;height:540px;border-radius:14px 26px 26px 14px;background:linear-gradient(160deg,#8a4fd6,#5c2aa8);box-shadow:0 30px 60px rgba(40,10,80,.35),inset 14px 0 0 rgba(0,0,0,.18);color:#fff;padding:54px 40px;text-align:center}
+.livro .h{font-family:Fredoka;font-weight:700;font-size:64px;line-height:1;color:#ffd84d}
+.livro .s{font-family:Fredoka;font-weight:600;font-size:30px;margin-top:16px}
+.passo{display:flex;gap:16px;align-items:flex-start;margin-top:20px}
+.passo .n{flex:0 0 52px;height:52px;border-radius:50%;background:var(--pill);color:#fff;font-family:Fredoka;font-weight:700;font-size:30px;display:flex;align-items:center;justify-content:center}
+.passo b{display:block;font-family:Fredoka;font-weight:600;font-size:29px}
+.passo p{font-weight:700;color:#5b6b80;font-size:21px;line-height:1.35}
+.dica{margin-top:30px;font-size:20px;background:#fff6d6;border-radius:14px;padding:12px 16px;font-weight:800;font-size:18px;color:#7a5a00}
+</style></head><body>
+<div class="cena" id="cena"></div>
+<script>
+const b=+new URLSearchParams(location.search).get('b')||1;
+const C={1:['#dff0ff','#c9dcff','#1E73BE'],2:['#ffe7ef','#ffd3e0','#e0507a'],3:['#fff4cf','#ffe3a3','#e7a20f'],4:['#e3f7ee','#c6ecd9','#16936a'],5:['#f3e8ff','#e2ccff','#7b3fc4'],6:['#ede5ff','#d9cbff','#6a36c2']}[b];
+const cena=document.getElementById('cena');
+cena.style.setProperty('--c1',C[0]);cena.style.setProperty('--c2',C[1]);cena.style.setProperty('--pill',C[2]);
+let conf='';[[90,700,26,'#ffd84d'],[1080,140,20,'#7fd1b9'],[160,140,16,'#ff8fa3'],[1100,560,28,'#8fb8ff'],[620,60,14,'#c8a6ff'],[980,820,18,'#ffd84d']].forEach(([x,y,s,c])=>conf+=`<i class="conf" style="left:${x}px;top:${y}px;width:${s}px;height:${s}px;background:${c}"></i>`);
+const rod='<div class="rodape"><b>♥</b> Mundo Autista · Atividades</div>';
+const H={
+1:`<div class="folha" style="left:240px;top:60px;width:720px;height:790px;transform:rotate(-2deg);--borda:#bcd6f5">
+ <div class="cab"><span class="pill">A minha rotina</span><p class="inst">Primeiro isto, depois aquilo. Sem surpresas.</p></div>
+ <div class="pd"><div style="background:#1E73BE">Primeiro<div class="emo">🪥</div></div><div style="background:#16936a">Depois<div class="emo">🎒</div></div></div>
+ <div class="rot">
+  <div class="rc"><span class="emo">🌅</span><b>Acordar</b></div>
+  <div class="rc"><span class="emo">👕</span><b>Vestir</b></div>
+  <div class="rc"><span class="emo">🥣</span><b>Pequeno-almoço</b></div>
+  <div class="rc"><span class="emo">🧼</span><b>Lavar as mãos</b></div>
+  <div class="rc"><span class="emo">🛁</span><b>Banho</b></div>
+  <div class="rc"><span class="emo">🛏️</span><b>Dormir</b></div>
+ </div>${rod}</div>`,
+2:`<div class="cartao" style="--cor:#16936a;left:70px;top:300px;transform:rotate(-12deg)"><span class="emo">😢</span><b>Triste</b></div>
+<div class="cartao" style="--cor:#1E73BE;left:330px;top:240px;transform:rotate(-4deg)"><span class="emo">😊</span><b>Contente</b></div>
+<div class="cartao" style="--cor:#e0334a;left:580px;top:250px;transform:rotate(5deg)"><span class="emo">😠</span><b>Zangado</b></div>
+<div class="cartao" style="--cor:#e7a20f;left:830px;top:310px;transform:rotate(13deg)"><span class="emo">😨</span><b>Com medo</b></div>
+<div style="position:absolute;left:0;right:0;top:90px;text-align:center"><span class="pill" style="font-size:44px">O que estou a sentir?</span></div>`,
+3:`<div class="folha" style="left:170px;top:130px;width:860px;height:650px;transform:rotate(2deg);--borda:#f3d27a">
+ <div class="cab"><span class="pill">⭐ As minhas estrelas ⭐</span><p class="inst">Cada tarefa feita vale uma estrela.</p></div>
+ <div class="est">${'<div>⭐</div>'.repeat(8)}${'<div class="v"></div>'.repeat(2)}</div>
+ <div class="premio">🎁 O meu prémio: <span></span></div>${rod}</div>`,
+4:(()=>{const e=['🎨','🔔','🧩','✋','🔢','🔤','🙂','🍎','🎯','🧸','✏️','🧠','🎵','🌈'];let d='';for(let i=1;i<=30;i++)d+=`<div class="${i<=9?'f':''}"><i>${i}</i><em>${e[i%e.length]}</em></div>`;
+ return `<div class="folha" style="left:110px;top:50px;width:980px;height:800px;transform:rotate(-1.5deg);--borda:#a8e0c4">
+ <div class="cab"><span class="pill">30 dias de atividades</span><p class="inst">Uma atividade por dia. Pinte o dia quando terminar.</p></div>
+ <div class="cal">${d}</div>${rod}</div>`})(),
+5:`<div class="cert" style="left:120px;top:150px;width:960px;height:600px;transform:rotate(-2deg)">
+ <h3>Certificado de Conquista</h3>
+ <div class="par">Parabéns!</div>
+ <div class="nome">nome da criança</div>
+ <p class="por">por ter concluído as atividades da semana</p>
+ <div class="stars">⭐⭐⭐</div></div>
+ <div class="fita" style="left:930px;top:640px;transform:rotate(-12deg)"></div><div class="fita" style="left:985px;top:640px;transform:rotate(12deg)"></div>
+ <div class="medalha" style="left:890px;top:540px">🏆</div>`,
+6:`<div class="folha" style="left:470px;top:120px;width:620px;height:690px;transform:rotate(3deg);--borda:#cdb8f5">
+ <div class="cab"><span class="pill">Como aplicar</span></div>
+ <div class="passo"><div class="n">1</div><div><b>Escolha 1 ficha curta</b><p>5 a 10 minutos chegam. Comece pelo que a criança gosta.</p></div></div>
+ <div class="passo"><div class="n">2</div><div><b>Mostre antes de pedir</b><p>Faça o primeiro exemplo à frente dela.</p></div></div>
+ <div class="passo"><div class="n">3</div><div><b>Celebre cada passo</b><p>Uma estrela no quadro vale mais do que a perfeição.</p></div></div>
+ <div class="dica">💡 Mesmo horário todos os dias = menos resistência.</div>${rod}</div>
+ <div class="livro" style="left:110px;top:170px;transform:rotate(-6deg)">
+  <div style="font-size:70px">📘</div><div class="h">Guia<br>rápido</div><div class="s">Como aplicar as atividades no dia a dia</div>
+  <div style="margin-top:40px;font-weight:800;font-size:20px;opacity:.9">Mundo Autista</div></div>`
+};
+cena.innerHTML=conf+H[b];
+</script></body></html>
