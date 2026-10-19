@@ -211,6 +211,22 @@ section { padding: var(--secao) 0; }
   .outros .avulsos { grid-template-columns: repeat(2, 1fr); }
 }
 
+
+/* Melhorias do Clarity */
+.marca { display: block; text-decoration: none; }
+.mockup-link { display: block; }
+.selos-hero { list-style: none; max-width: 420px; margin: 14px auto 0; text-align: left; font-size: 0.9rem; color: var(--texto-suave); }
+.selos-hero li { padding: 3px 0; }
+.selos-hero strong { color: var(--texto); }
+.rolar { display: inline-block; margin-top: 14px; font-weight: 700; font-size: 0.9rem; color: var(--azul); text-decoration: none; animation: pulo 1.6s ease-in-out infinite; }
+@keyframes pulo { 50% { transform: translateY(4px); } }
+a.garantia { text-decoration: none; }
+a.bonus { display: block; text-decoration: none; color: inherit; }
+.depoimentos img { cursor: zoom-in; }
+.zoom { position: fixed; inset: 0; z-index: 100; background: rgba(10,20,35,0.85); display: flex; align-items: center; justify-content: center; padding: 20px; cursor: zoom-out; }
+.zoom img { max-width: 100%; max-height: 90vh; border-radius: 12px; }
+.btn, .seta, summary, a { touch-action: manipulation; }
+
 /* Como comprar */
 .passos { list-style: none; counter-reset: p; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; max-width: 760px; margin: 36px auto 0; }
 .passos li { counter-increment: p; background: #fff; border: 1px solid var(--borda); border-radius: 14px; padding: 14px; font-size: 0.88rem; color: var(--texto-suave); display: flex; gap: 10px; align-items: center; }
@@ -280,15 +296,20 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
 <!-- 1. HERO -->
 <section class="hero">
   <div class="container">
-    <p class="marca">Mundo Autista</p>
+    <a class="marca" href="#">Mundo Autista</a>
     <h1>Atividades prontas para imprimir. <span>Mais tempo com a criança.</span></h1>
     <p class="sub">Kits de atividades para crianças com autismo — atenção, emoções, sensorial e planos de aula. Descarregue, imprima e use hoje.</p>
-    <picture>
+    <a href="#oferta" class="mockup-link" aria-label="Ver os kits e o preço"><picture>
       <source media="(max-width: 600px)" srcset="img/hero-mobile.webp" width="720" height="720">
       <img class="mockup" src="img/hero-desktop.webp" alt="Kit Completo Mundo Autista: 4 kits com +8.200 atividades por 27,90 €" width="1440" height="960" fetchpriority="high">
-    </picture>
+    </picture></a>
     <a class="btn" href="#oferta">Quero o Kit Completo</a>
-    <p class="preco-hero"><strong>27,90 €</strong> · pagamento único<br>⚡ Acesso imediato · 🛡️ Garantia de 7 dias</p>
+    <ul class="selos-hero">
+      <li>✅ <strong>Pagamento único</strong> — não é subscrição</li>
+      <li>📄 <strong>PDF no seu e-mail</strong> na hora — nada vai pelo correio</li>
+      <li>🛡️ <strong>7 dias de garantia</strong> — se não gostar, devolvemos</li>
+    </ul>
+    <a class="rolar" href="#amostra">Veja as atividades por dentro ↓</a>
   </div>
 </section>
 
@@ -302,7 +323,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
 </section>
 
 <!-- 3. PRÉVIAS -->
-<section>
+<section id="amostra">
   <div class="container">
     <h2 class="titulo">Uma amostra de <mark>+8.200 atividades</mark></h2>
     <p class="sub">Estas são apenas algumas fichas. Nos 4 kits recebe milhares de atividades como estas, organizadas por tema.</p>
@@ -349,7 +370,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
   <div class="container">
     <h2 class="titulo">Quem já é nosso cliente, confia</h2>
     <p class="sub">Conversas reais, publicadas com autorização, de clientes dos nossos materiais.</p>
-    <div class="depoimentos">
+    <div class="depoimentos" id="depoimentos">
       <img loading="lazy" decoding="async" src="img/depoimento-1.webp" alt="Cliente a elogiar os bónus, o conteúdo e a estrutura">
       <img loading="lazy" decoding="async" src="img/depoimento-5.webp" alt="Cliente que já acompanha e comprou outro material">
     </div>
@@ -362,12 +383,12 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
     <h2 class="titulo">No Kit Completo ainda leva <mark>6 bónus</mark></h2>
     <p class="sub">Materiais extras para organizar a rotina e celebrar cada conquista.</p>
     <div class="bonus-grid">
-      <div class="bonus"><img loading="lazy" decoding="async" src="img/bonus-1.webp" alt="Rotina visual para imprimir"><div class="conteudo"><h4>Rotina visual</h4><p>Cartões para organizar o dia da criança.</p><span class="gratis">🎁 Grátis</span></div></div>
-      <div class="bonus"><img loading="lazy" decoding="async" src="img/bonus-2.webp" alt="Cartões de emoções"><div class="conteudo"><h4>Cartões de emoções</h4><p>Para nomear o que sente.</p><span class="gratis">🎁 Grátis</span></div></div>
-      <div class="bonus"><img loading="lazy" decoding="async" src="img/bonus-3.webp" alt="Quadro de recompensas"><div class="conteudo"><h4>Quadro de recompensas</h4><p>Estrelas para celebrar cada conquista.</p><span class="gratis">🎁 Grátis</span></div></div>
-      <div class="bonus"><img loading="lazy" decoding="async" src="img/bonus-4.webp" alt="Calendário 30 dias de atividades"><div class="conteudo"><h4>Calendário 30 dias</h4><p>Uma atividade sugerida para cada dia.</p><span class="gratis">🎁 Grátis</span></div></div>
-      <div class="bonus"><img loading="lazy" decoding="async" src="img/bonus-5.webp" alt="Certificados de conquista"><div class="conteudo"><h4>Certificados</h4><p>Para imprimir e comemorar.</p><span class="gratis">🎁 Grátis</span></div></div>
-      <div class="bonus"><img loading="lazy" decoding="async" src="img/bonus-6.webp" alt="Guia rápido: como aplicar"><div class="conteudo"><h4>Guia rápido</h4><p>Como aplicar as atividades no dia a dia.</p><span class="gratis">🎁 Grátis</span></div></div>
+      <a class="bonus" href="#oferta"><img loading="lazy" decoding="async" src="img/bonus-1.webp" alt="Rotina visual para imprimir"><div class="conteudo"><h4>Rotina visual</h4><p>Cartões para organizar o dia da criança.</p><span class="gratis">🎁 Grátis</span></div></a>
+      <a class="bonus" href="#oferta"><img loading="lazy" decoding="async" src="img/bonus-2.webp" alt="Cartões de emoções"><div class="conteudo"><h4>Cartões de emoções</h4><p>Para nomear o que sente.</p><span class="gratis">🎁 Grátis</span></div></a>
+      <a class="bonus" href="#oferta"><img loading="lazy" decoding="async" src="img/bonus-3.webp" alt="Quadro de recompensas"><div class="conteudo"><h4>Quadro de recompensas</h4><p>Estrelas para celebrar cada conquista.</p><span class="gratis">🎁 Grátis</span></div></a>
+      <a class="bonus" href="#oferta"><img loading="lazy" decoding="async" src="img/bonus-4.webp" alt="Calendário 30 dias de atividades"><div class="conteudo"><h4>Calendário 30 dias</h4><p>Uma atividade sugerida para cada dia.</p><span class="gratis">🎁 Grátis</span></div></a>
+      <a class="bonus" href="#oferta"><img loading="lazy" decoding="async" src="img/bonus-5.webp" alt="Certificados de conquista"><div class="conteudo"><h4>Certificados</h4><p>Para imprimir e comemorar.</p><span class="gratis">🎁 Grátis</span></div></a>
+      <a class="bonus" href="#oferta"><img loading="lazy" decoding="async" src="img/bonus-6.webp" alt="Guia rápido: como aplicar"><div class="conteudo"><h4>Guia rápido</h4><p>Como aplicar as atividades no dia a dia.</p><span class="gratis">🎁 Grátis</span></div></a>
     </div>
     <div class="cta">
       <a class="btn" href="#oferta">Quero o Kit Completo com os bónus</a>
@@ -375,8 +396,25 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
   </div>
 </section>
 
-<!-- 6. OFERTA -->
-<section class="suave" id="oferta">
+<!-- 6. FAQ (antes do preço: Clarity mostrou mais cliques no FAQ do que no botão) -->
+<section class="suave">
+  <div class="container">
+    <h2 class="titulo">Perguntas frequentes</h2>
+    <div class="faq">
+      <details><summary>Vou receber algo pelo correio?</summary><p>Não. O material é digital (PDF): descarrega e imprime em casa ou numa papelaria, quantas vezes quiser.</p></details>
+      <details><summary>Como recebo o material?</summary><p>Logo após o pagamento, o acesso chega ao seu e-mail. Em minutos já pode descarregar e imprimir.</p></details>
+      <details><summary>É uma subscrição? Vou pagar todos os meses?</summary><p>Não. É um pagamento único, sem mensalidades. O acesso é seu.</p></details>
+      <details><summary>Para que idades servem as atividades?</summary><p>Para o pré-escolar e o 1.º ciclo, e podem ser adaptadas ao nível de cada criança.</p></details>
+      <details><summary>Serve para professores e terapeutas?</summary><p>Sim. Pode usar em casa, na sala de aula ou no consultório.</p></details>
+      <details><summary>E se eu não gostar?</summary><p>Tem 7 dias de garantia. Basta pedir e devolvemos 100% do valor.</p></details>
+    </div>
+    <div class="cta">
+      <a class="btn" href="#oferta">Ver o preço e escolher o kit</a>
+    </div>
+  </div>
+</section>
+<!-- 7. OFERTA -->
+<section id="oferta">
   <div class="container">
     <h2 class="titulo">Escolha o seu kit</h2>
     <p class="sub">Pagamento único. Acesso imediato no seu e-mail.</p>
@@ -406,10 +444,10 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
         </div>
         <a class="btn bloco" href="#" data-checkout="completo">Quero o Kit Completo</a>
         <div class="confianca"><span>⚡ Acesso imediato</span><span>🔒 Pagamento seguro</span><span>📱 Telemóvel, tablet ou PC</span></div>
-        <div class="garantia">
+        <a class="garantia" href="#" data-checkout="completo">
           <div class="selo-7"><strong>7</strong><span>dias</span></div>
           <p><strong>Garantia de 7 dias.</strong> Descarregue, imprima e use. Se não gostar, devolvemos 100% do valor, sem perguntas.</p>
-        </div>
+        </a>
       </div>
       <div class="basico">
         <h3>Só Atividades</h3>
@@ -444,24 +482,6 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
   </div>
 </section>
 
-<!-- 7. FAQ -->
-<section>
-  <div class="container">
-    <h2 class="titulo">Perguntas frequentes</h2>
-    <div class="faq">
-      <details><summary>Vou receber algo pelo correio?</summary><p>Não. O material é digital (PDF): descarrega e imprime em casa ou numa papelaria, quantas vezes quiser.</p></details>
-      <details><summary>Como recebo o material?</summary><p>Logo após o pagamento, o acesso chega ao seu e-mail. Em minutos já pode descarregar e imprimir.</p></details>
-      <details><summary>É uma subscrição? Vou pagar todos os meses?</summary><p>Não. É um pagamento único, sem mensalidades. O acesso é seu.</p></details>
-      <details><summary>Para que idades servem as atividades?</summary><p>Para o pré-escolar e o 1.º ciclo, e podem ser adaptadas ao nível de cada criança.</p></details>
-      <details><summary>Serve para professores e terapeutas?</summary><p>Sim. Pode usar em casa, na sala de aula ou no consultório.</p></details>
-      <details><summary>E se eu não gostar?</summary><p>Tem 7 dias de garantia. Basta pedir e devolvemos 100% do valor.</p></details>
-    </div>
-    <div class="cta">
-      <a class="btn" href="#oferta">Escolher o meu kit</a>
-      <p class="nota">Kit Completo por 27,90 € · pagamento único</p>
-    </div>
-  </div>
-</section>
 </main>
 
 <footer>
@@ -489,6 +509,8 @@ var CHECKOUT = {
 // ID do Pixel da Meta (Gerenciador de Eventos). Vazio = pixel desligado.
 var PIXEL_ID = '';
 // Links do rodapé (a Meta exige política de privacidade em páginas de anúncio).
+// ID do projeto do Microsoft Clarity (Configurações → Instalação). Vazio = desligado.
+var CLARITY_ID = '';
 var LEGAIS = { 'Política de privacidade': '', 'Termos de uso': '', 'Contato': '' };
 // ==========================================================================
 
@@ -515,6 +537,30 @@ document.querySelectorAll('[data-checkout]').forEach(function (a) {
 // Kits avulsos de R$ 14,90: só aparecem quando tiverem checkout
 if (!CHECKOUT.emocional && !CHECKOUT.sensorial && !CHECKOUT.planos) {
   var outros = document.querySelector('.outros'); if (outros) outros.hidden = true;
+}
+
+// Depoimentos: toque amplia a imagem
+document.querySelectorAll('#depoimentos img').forEach(function (img) {
+  img.addEventListener('click', function () {
+    var z = document.createElement('div'); z.className = 'zoom';
+    var i = document.createElement('img'); i.src = img.currentSrc || img.src; i.alt = img.alt;
+    z.appendChild(i); z.addEventListener('click', function () { z.remove(); });
+    document.body.appendChild(z);
+  });
+});
+
+// Microsoft Clarity + eventos do funil (os mesmos nomes de antes, para comparar)
+if (CLARITY_ID) {
+  (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CLARITY_ID);
+  var etapas = [['.hero','viu_1_topo'],['.dor','viu_2_dor'],['#amostra','viu_3_amostra'],['#depoimentos','viu_4_prova_social'],['.bonus-grid','viu_5_bonus'],['.faq','viu_7_faq'],['#oferta','viu_6_oferta']];
+  if ('IntersectionObserver' in window) etapas.forEach(function (e) {
+    var el = document.querySelector(e[0]); if (!el) return;
+    var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { clarity('event', e[1]); io.disconnect(); } }, { threshold: 0.3 });
+    io.observe(el);
+  });
+  document.querySelectorAll('[data-checkout]').forEach(function (a) {
+    a.addEventListener('click', function () { clarity('event', 'checkout_clique'); });
+  });
 }
 
 // Rodapé legal: só mostra os links preenchidos
