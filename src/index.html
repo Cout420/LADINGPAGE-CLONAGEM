@@ -303,7 +303,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
     <p class="sub">Kits de atividades para crianças com autismo — atenção, emoções, sensorial e planos de aula. Descarregue, imprima e use hoje.</p>
     <a href="#oferta" class="mockup-link" aria-label="Ver os kits e o preço"><picture>
       <source media="(max-width: 600px)" srcset="img/hero-mobile.webp" width="720" height="720">
-      <img class="mockup" src="img/hero-desktop.webp" alt="Kit Completo Mundo Autista: 4 kits com +8.200 atividades por 27,90 €" width="1440" height="960" fetchpriority="high">
+      <img class="mockup" src="img/hero-desktop.webp" alt="Kit Completo Mundo Autista: 4 kits com +8.200 atividades por 22,90 €" width="1440" height="960" fetchpriority="high">
     </picture></a>
     <a class="btn" href="#oferta">Quero o Kit Completo</a>
     <ul class="selos-hero">
@@ -407,14 +407,14 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
     <p class="sub">Pagamento único. Acesso imediato no seu e-mail.</p>
 
     <div class="oferta">
-      <!-- Vídeo dos kits: volta aqui quando o criativo tiver o preço "separados" corrigido (soma real R$ 54,60).
+      <!-- Vídeo dos kits: volta aqui quando o criativo tiver o preço "separados" corrigido (preço do Kit Completo 22,90 €).
       <div class="video quadrado">
         <video data-video="kits" poster="img/poster-kits.webp" muted loop playsinline preload="none"></video>
         <button class="som" type="button">🔇 Ativar som</button>
       </div>
       -->
       <div class="combo">
-        <span class="selo-top">⭐ Melhor custo-benefício</span>
+        <span class="selo-top">⭐ O mais completo</span>
         <h3>Kit Completo</h3>
         <p class="resumo">Tudo do kit básico + 3 kits + 6 bónus</p>
         <ul class="lista">
@@ -425,9 +425,9 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
           <li class="extra"><span><b>6 bónus</b> · só no Kit Completo</span></li>
         </ul>
         <div class="preco">
-          <div class="por">27,90<small>€</small></div>
+          <div class="por">22,90<small>€</small></div>
           <div class="unico">pagamento único · sem mensalidade</div>
-          <div class="economia">Em separado custariam <s>54,60 €</s> e sem os bónus.<br><strong class="economize">Poupa 26,70 € + leva 6 bónus</strong></div>
+          <div class="economia"><strong class="economize">Só +13 € do que levar apenas 1 kit</strong></div>
         </div>
         <a class="btn bloco" href="#" data-checkout="completo">Quero o Kit Completo</a>
         <div class="confianca"><span>⚡ Acesso imediato</span><span>🔒 Pagamento seguro</span><span>📱 Telemóvel, tablet ou PC</span></div>
@@ -448,7 +448,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
         </ul>
         <div class="preco"><div class="por pequeno">9,90<small>€</small></div><div class="unico">pagamento único</div></div>
         <a class="btn secundario bloco" href="#" data-checkout="atencao">Quero só as atividades</a>
-        <p class="diferenca">Por apenas <strong>+18 €</strong> leva <strong>+5.200 atividades</strong>, 168 planos de aula e os 6 bónus</p>
+        <p class="diferenca">Por apenas <strong>+13 €</strong> leva <strong>+5.200 atividades</strong>, 168 planos de aula e os 6 bónus</p>
       </div>
     </div>
 
@@ -458,14 +458,6 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
       <li><span><strong>Pague</strong> com cartão, em ambiente seguro</span></li>
       <li><span><strong>Receba</strong> o acesso no e-mail no momento e imprima</span></li>
     </ol>
-    <details class="outros">
-      <summary>Quer só um dos outros kits? Ver kits avulsos</summary>
-      <div class="avulsos">
-      <div class="kit"><img src="img/kit-2.webp" alt="Kit Controle Emocional"><div class="info"><h4>Controle Emocional</h4><span class="qtd">+4.000 atividades</span><span class="valor">14,90 €</span><a class="btn secundario" href="#" data-checkout="emocional">Comprar</a></div></div>
-      <div class="kit"><img src="img/kit-3.webp" alt="Kit Sensorial"><div class="info"><h4>Sensorial</h4><span class="qtd">+1.200 atividades</span><span class="valor">14,90 €</span><a class="btn secundario" href="#" data-checkout="sensorial">Comprar</a></div></div>
-      <div class="kit"><img src="img/kit-4.webp" alt="Kit Planos de Aula"><div class="info"><h4>Planos de Aula</h4><span class="qtd">168 planos</span><span class="valor">14,90 €</span><a class="btn secundario" href="#" data-checkout="planos">Comprar</a></div></div>
-      </div>
-    </details>
   </div>
 </section>
 
@@ -479,7 +471,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
 </footer>
 
 <div class="barra" id="barra">
-  <div class="txt">Kit Completo<strong>27,90 €</strong></div>
+  <div class="txt">Kit Completo<strong>22,90 €</strong></div>
   <a class="btn" href="#oferta">Escolher kit</a>
 </div>
 
@@ -510,7 +502,7 @@ if (PIXEL_ID) {
 function rastreia(evento, dados) { if (window.fbq) fbq('track', evento, dados); }
 
 // Botões de compra: link real + UTMs do anúncio repassadas ao checkout (atribuição de venda)
-var VALORES = { completo: 27.90, atencao: 9.90, emocional: 14.90, sensorial: 14.90, planos: 14.90 };
+var VALORES = { completo: 22.90, atencao: 9.90 };
 document.querySelectorAll('[data-checkout]').forEach(function (a) {
   var chave = a.dataset.checkout, url = CHECKOUT[chave];
   if (!url) { a.href = '#oferta'; return; }
@@ -520,11 +512,6 @@ document.querySelectorAll('[data-checkout]').forEach(function (a) {
     rastreia('InitiateCheckout', { content_name: chave, value: VALORES[chave], currency: 'EUR' });
   });
 });
-
-// Kits avulsos de R$ 14,90: só aparecem quando tiverem checkout
-if (!CHECKOUT.emocional && !CHECKOUT.sensorial && !CHECKOUT.planos) {
-  var outros = document.querySelector('.outros'); if (outros) outros.hidden = true;
-}
 
 // Depoimentos: toque amplia a imagem
 document.querySelectorAll('#depoimentos img').forEach(function (img) {
@@ -624,7 +611,7 @@ document.querySelectorAll('.video').forEach(function (box) {
   var viu = false;
   new IntersectionObserver(function (e) {
     ofertaVisivel = e[0].isIntersecting; atualiza();
-    if (ofertaVisivel && !viu) { viu = true; rastreia('ViewContent', { content_name: 'oferta', currency: 'EUR', value: 27.90 }); }
+    if (ofertaVisivel && !viu) { viu = true; rastreia('ViewContent', { content_name: 'oferta', currency: 'EUR', value: 22.90 }); }
   }).observe(oferta);
 })();
 </script>
