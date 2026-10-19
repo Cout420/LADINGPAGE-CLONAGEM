@@ -71,7 +71,7 @@ section { padding: var(--secao) 0; }
 .hero .mockup { width: 100%; height: auto; max-width: 760px; margin: 4px auto 24px; border-radius: var(--raio); box-shadow: var(--sombra); }
 
 /* Dor + vídeo */
-.dor { max-width: 680px; margin: 0 auto; text-align: center; }
+.dor { max-width: 680px; margin: 0 auto 40px; text-align: center; padding-bottom: 32px; border-bottom: 2px dashed var(--borda); }
 .dor h2 { font-size: 1.9rem; color: var(--azul-escuro); margin-bottom: 14px; }
 .dor p { color: var(--texto-suave); margin-bottom: 12px; }
 .dor p strong { color: var(--texto); }
@@ -218,7 +218,9 @@ section { padding: var(--secao) 0; }
 .selos-hero { list-style: none; max-width: 420px; margin: 14px auto 0; text-align: left; font-size: 0.9rem; color: var(--texto-suave); }
 .selos-hero li { padding: 3px 0; }
 .selos-hero strong { color: var(--texto); }
-.rolar { display: inline-block; margin-top: 14px; font-weight: 700; font-size: 0.9rem; color: var(--azul); text-decoration: none; animation: pulo 1.6s ease-in-out infinite; }
+.atalhos { margin-top: 14px; display: flex; flex-wrap: wrap; gap: 6px 18px; justify-content: center; font-size: 0.9rem; }
+.atalhos a:not(.rolar) { color: var(--texto-suave); font-weight: 600; }
+.rolar { display: inline-block; font-weight: 700; font-size: 0.9rem; color: var(--azul); text-decoration: none; animation: pulo 1.6s ease-in-out infinite; }
 @keyframes pulo { 50% { transform: translateY(4px); } }
 a.garantia { text-decoration: none; }
 a.bonus { display: block; text-decoration: none; color: inherit; }
@@ -309,22 +311,17 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
       <li>📄 <strong>PDF no seu e-mail</strong> na hora — nada vai pelo correio</li>
       <li>🛡️ <strong>7 dias de garantia</strong> — se não gostar, devolvemos</li>
     </ul>
-    <a class="rolar" href="#amostra">Veja as atividades por dentro ↓</a>
-  </div>
-</section>
-
-<!-- 2. DOR (o vídeo da dor já é o anúncio: aqui só reforça em 3 linhas) -->
-<section class="suave">
-  <div class="container dor">
-    <h2>23h. A criança já adormeceu. E ainda está à procura de atividades.</h2>
-    <p>PDF que não abre, sites cheios de anúncios, material que não serve para ela. No dia seguinte, frustra-se e desiste em dois minutos.</p>
-    <p><strong>Não é falta de esforço. É falta de material feito para ela: visual, curto e previsível.</strong></p>
+    <p class="atalhos"><a class="rolar" href="#amostra">Ver as atividades por dentro ↓</a><a href="#oferta">Ir direto ao preço</a></p>
   </div>
 </section>
 
 <!-- 3. PRÉVIAS -->
-<section id="amostra">
+<section class="suave" id="amostra">
   <div class="container">
+    <div class="dor">
+      <h2>23h. A criança já adormeceu. E ainda está à procura de atividades.</h2>
+      <p>PDF que não abre, sites cheios de anúncios, material que não serve para ela. <strong>Não é falta de esforço. É falta de material feito para ela: visual, curto e previsível.</strong></p>
+    </div>
     <h2 class="titulo">Uma amostra de <mark>+8.200 atividades</mark></h2>
     <p class="sub">Estas são apenas algumas fichas. Nos 4 kits recebe milhares de atividades como estas, organizadas por tema.</p>
     <div class="amostra">
@@ -365,17 +362,7 @@ footer { padding: 32px 0 96px; text-align: center; font-size: 0.82rem; color: va
   </div>
 </section>
 
-<!-- 4. PROVA SOCIAL (antes do preço: quebra o medo de golpe) -->
-<section class="suave">
-  <div class="container">
-    <h2 class="titulo">Quem já é nosso cliente, confia</h2>
-    <p class="sub">Conversas reais, publicadas com autorização, de clientes dos nossos materiais.</p>
-    <div class="depoimentos" id="depoimentos">
-      <img loading="lazy" decoding="async" src="img/depoimento-1.webp" alt="Cliente a elogiar os bónus, o conteúdo e a estrutura">
-      <img loading="lazy" decoding="async" src="img/depoimento-5.webp" alt="Cliente que já acompanha e comprou outro material">
-    </div>
-  </div>
-</section>
+<!-- 4. PROVA SOCIAL: removida até haver depoimentos de clientes em Portugal sobre este produto (prints em img/depoimento-*.webp) -->
 
 <!-- 5. BÔNUS (antes do preço: empilha valor) -->
 <section>
@@ -552,7 +539,7 @@ document.querySelectorAll('#depoimentos img').forEach(function (img) {
 // Microsoft Clarity + eventos do funil (os mesmos nomes de antes, para comparar)
 if (CLARITY_ID) {
   (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CLARITY_ID);
-  var etapas = [['.hero','viu_1_topo'],['.dor','viu_2_dor'],['#amostra','viu_3_amostra'],['#depoimentos','viu_4_prova_social'],['.bonus-grid','viu_5_bonus'],['.faq','viu_7_faq'],['#oferta','viu_6_oferta']];
+  var etapas = [['.hero','viu_1_topo'],['.dor','viu_2_dor'],['.amostra','viu_3_amostra'],['.bonus-grid','viu_5_bonus'],['.faq','viu_7_faq'],['#oferta','viu_6_oferta']];
   if ('IntersectionObserver' in window) etapas.forEach(function (e) {
     var el = document.querySelector(e[0]); if (!el) return;
     var io = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { clarity('event', e[1]); io.disconnect(); } }, { threshold: 0.3 });
